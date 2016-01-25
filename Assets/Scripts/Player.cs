@@ -9,9 +9,26 @@ public class Player : MonoBehaviour
     float m_HitPoints;
 
     [SerializeField]
-    private Rigidbody m_Rigidbody;
+    Vector3 m_Velocity;
+    [SerializeField]
+    Vector3 m_Speed;
+    [SerializeField]
+    Vector3 m_MaxSpeed;
 
-    bool ShouldJump = true;
+    Vector3 m_PrevPos;
+
+    [SerializeField]
+    bool m_CanJump = true;
+
+    enum PlayerState { IDLE, WALKING, RUNNING, JUMPING };
+
+    [SerializeField]
+    PlayerState m_State = PlayerState.IDLE;
+    [SerializeField]
+    Animator m_Animator;
+
+    [SerializeField]
+    Rigidbody m_Rigidbody;
 
     protected virtual void Awake()
     {
@@ -22,36 +39,91 @@ public class Player : MonoBehaviour
     protected virtual void Start()
     {
         Debug.Log("Start");
+        m_PrevPos = transform.position;
     }
 
     protected virtual void FixedUpdate()
     {
-        float fMoveHorizontal = Input.GetAxis("Horizontal");
-        float fJump = 0;
+        print("FixedUpdate");
 
-        //if (ShouldJump)
-        //{
-        if ((fJump = Input.GetAxis("Jump")) > 0)
+        if (Input.GetAxisRaw("Horizontal") != 0 && m_State != PlayerState.JUMPING)
         {
-            //  ShouldJump = false;
+            m_State = PlayerState.WALKING;
+
+            if (Input.GetAxisRaw("Horizontal") == 1)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+            if (Input.GetAxisRaw("Horizontal") == -1)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
         }
-        // }
+        else if (m_State != PlayerState.JUMPING && m_Velocity.x != 0)
+        {
+            if (m_Velocity.x > 0)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed.x * Time.deltaTime), 0, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+            if (m_Velocity.x < 0)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, 0), m_Velocity.y, m_Velocity.z);
+        }
 
-        Vector3 v3Movement = new Vector3(fMoveHorizontal * 1000 * Time.deltaTime, fJump * 800 * Time.deltaTime, 0);
+        if (Input.GetAxisRaw("Jump") != 0 && m_CanJump)
+        {
+            m_State = PlayerState.JUMPING;
+            m_CanJump = false;
+            m_Velocity = new Vector3(m_Velocity.x, m_MaxSpeed.y, m_Velocity.z);
+            print(m_Velocity.y);
+        }
 
-        Mathf.Clamp(v3Movement.x, 10, 100);
-        m_Rigidbody.AddForce(v3Movement);
+        m_Velocity = new Vector3(m_Velocity.x, Mathf.Clamp(m_Velocity.y - (m_Speed.y * Time.deltaTime), -m_MaxSpeed.y, m_MaxSpeed.y), m_Velocity.z);
+
+        Move();
+
+        if (m_PrevPos == transform.position)
+        {
+            m_State = PlayerState.IDLE;
+            m_Velocity = new Vector3(0, 0, 0);
+        }
+
+        m_PrevPos = transform.position;
+        m_Rigidbody.velocity = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+        print("Update");
 
+        if (m_State == PlayerState.WALKING)
+            m_Animator.SetTrigger("Player_Move");
     }
 
-    protected virtual void OnCollisionEnter(Collision other)
+    protected virtual void LateUpdate()
     {
-        print("Points colliding: " + other.contacts.Length);
-        print("First point that collided: " + other.contacts[0].point);
+        print("LateUpdate");
+    }
+
+    protected virtual void Move()
+    {
+        transform.position += m_Velocity;
+    }
+
+    protected virtual void OnCollisionStay(Collision collision)
+    {
+        print("OnCollisionStay");
+        //m_CanJump = false;
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
+            {
+                m_State = PlayerState.WALKING;
+                m_CanJump = true;
+                m_Velocity = new Vector3(m_Velocity.x, 0, m_Velocity.z);
+            }
+            else if (contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && Input.GetAxisRaw("Horizontal") == 1)
+            {
+                if (m_State != PlayerState.JUMPING)
+                {
+                    m_State = PlayerState.IDLE;
+                    m_Velocity = new Vector3(0, m_Velocity.y, 0);
+                }
+            }
+        }
     }
 }
