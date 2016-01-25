@@ -4,12 +4,12 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    bool IsActive;
+    bool m_IsActive;
     [SerializeField]
-    float HitPoints;
+    float m_HitPoints;
 
     [SerializeField]
-    private Rigidbody2D MyRigidbody;
+    private Rigidbody m_Rigidbody;
 
     bool ShouldJump = true;
 
@@ -31,23 +31,27 @@ public class Player : MonoBehaviour
 
         //if (ShouldJump)
         //{
-            if((fJump = Input.GetAxis("Jump")) > 0)
-            {
-              //  ShouldJump = false;
-            }
-       // }
+        if ((fJump = Input.GetAxis("Jump")) > 0)
+        {
+            //  ShouldJump = false;
+        }
+        // }
 
-        Vector2 v2Movement = new Vector2(fMoveHorizontal * 1000 * Time.deltaTime, fJump * 8000 * Time.deltaTime);
+        Vector3 v3Movement = new Vector3(fMoveHorizontal * 1000 * Time.deltaTime, fJump * 800 * Time.deltaTime, 0);
 
-        Mathf.Clamp(v2Movement.x, 10, 100);
-        MyRigidbody.AddForce(v2Movement);
+        Mathf.Clamp(v3Movement.x, 10, 100);
+        m_Rigidbody.AddForce(v3Movement);
     }
 
-    //// Update is called once per frame
-    //protected virtual void Update()
-    //{
-        
-    //}
+    // Update is called once per frame
+    protected virtual void Update()
+    {
 
-    // Used to interact with 
+    }
+
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        print("Points colliding: " + other.contacts.Length);
+        print("First point that collided: " + other.contacts[0].point);
+    }
 }
