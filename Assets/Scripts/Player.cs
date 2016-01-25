@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     bool m_CanJump = true;
 
-    enum PlayerState { IDLE, WALKING, RUNNING, JUMPING };
+    enum PlayerState { IDLE, WALKING, RUNNING, JUMPING, LANDING };
 
     [SerializeField]
     PlayerState m_State = PlayerState.IDLE;
@@ -46,9 +46,13 @@ public class Player : MonoBehaviour
     {
         print("FixedUpdate");
 
-        if (Input.GetAxisRaw("Horizontal") != 0 && m_State != PlayerState.JUMPING)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            m_State = PlayerState.WALKING;
+            if (m_State != PlayerState.JUMPING)
+            {
+                m_State = PlayerState.WALKING;
+                m_Animator.SetTrigger("Player_Walking");
+            }
 
             if (Input.GetAxisRaw("Horizontal") == 1)
                 m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
@@ -66,6 +70,8 @@ public class Player : MonoBehaviour
         if (Input.GetAxisRaw("Jump") != 0 && m_CanJump)
         {
             m_State = PlayerState.JUMPING;
+            m_Animator.SetTrigger("Player_Jumping");
+
             m_CanJump = false;
             m_Velocity = new Vector3(m_Velocity.x, m_MaxSpeed.y, m_Velocity.z);
             print(m_Velocity.y);
@@ -77,7 +83,11 @@ public class Player : MonoBehaviour
 
         if (m_PrevPos == transform.position)
         {
+            print("Yes");
+
             m_State = PlayerState.IDLE;
+            m_Animator.SetTrigger("Player_Idle");
+
             m_Velocity = new Vector3(0, 0, 0);
         }
 
@@ -88,10 +98,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        print("Update");
-
-        if (m_State == PlayerState.WALKING)
-            m_Animator.SetTrigger("Player_Move");
+        print("Update");            
     }
 
     protected virtual void LateUpdate()
@@ -112,15 +119,21 @@ public class Player : MonoBehaviour
         {
             if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
             {
-                m_State = PlayerState.WALKING;
                 m_CanJump = true;
-                m_Velocity = new Vector3(m_Velocity.x, 0, m_Velocity.z);
+
+                if (m_State == PlayerState.JUMPING)
+                {
+                    m_State = PlayerState.LANDING;
+                    m_Animator.SetTrigger("Player_Landing");
+                }
+                else
+                    m_Velocity = new Vector3(m_Velocity.x, 0, m_Velocity.z);
             }
             else if (contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && Input.GetAxisRaw("Horizontal") == 1)
             {
                 if (m_State != PlayerState.JUMPING)
                 {
-                    m_State = PlayerState.IDLE;
+                    //m_State = PlayerState.IDLE;
                     m_Velocity = new Vector3(0, m_Velocity.y, 0);
                 }
             }
