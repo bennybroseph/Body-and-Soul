@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Game_Controller : MonoBehaviour
     private GUIText restartText;
     [SerializeField]
     private GameObject ThePlayer;
+    private SceneManager SceneManagement;
 
     void Start()
     {
@@ -45,7 +47,7 @@ public class Game_Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene("AustinScene");
             }
         }
     }
@@ -54,6 +56,8 @@ public class Game_Controller : MonoBehaviour
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
+        ThePlayer.GetComponent<Rigidbody>().freezeRotation = false;
+        ThePlayer.GetComponent<Rigidbody>().AddTorque(100, 0, 500);
     }
 
     public void YouWin()
