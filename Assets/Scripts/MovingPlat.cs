@@ -1,42 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovingPlat : Platform {
+public class MovingPlat : Platform
+{
 
     public string Function;
-    bool change = false;
-    int Wait;
+    [SerializeField]
+    bool change = true;
 
-    // Use this for initialization
-    void Start ()
+    // Update is called once per frame
+    void Update()
     {
-        Wait = 0;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	switch(Function)
+        switch (Function)
         {
             case "right":
                 if (change == false)
                 {
                     MoveForward();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.x + m_Distance >= m_Origin.x)
                     {
                         change = true;
-                        Wait = 0;
                     }
                 }
                 if (change == true)
                 {
                     MoveBack();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.x + m_Distance <= m_Origin.x)
                     {
                         change = false;
-                        Wait = 0;
                     }
                 }
                 break;
@@ -45,21 +36,17 @@ public class MovingPlat : Platform {
                 if (change == false)
                 {
                     MoveBack();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.x + m_Distance <= m_Origin.x)
                     {
                         change = true;
-                        Wait = 0;
                     }
                 }
                 if (change == true)
                 {
                     MoveForward();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.x + m_Distance >= m_Origin.x)
                     {
                         change = false;
-                        Wait = 0;
                     }
                 }
                 break;
@@ -68,21 +55,17 @@ public class MovingPlat : Platform {
                 if (change == false)
                 {
                     MoveUp();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.y + m_Distance >= m_Origin.y)
                     {
                         change = true;
-                        Wait = 0;
                     }
                 }
                 if (change == true)
                 {
                     MoveDown();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.y + m_Distance <= m_Origin.y)
                     {
                         change = false;
-                        Wait = 0;
                     }
                 }
                 break;
@@ -91,24 +74,20 @@ public class MovingPlat : Platform {
                 if (change == false)
                 {
                     MoveDown();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.y + m_Distance <= m_Origin.y)
                     {
                         change = true;
-                        Wait = 0;
                     }
                 }
                 if (change == true)
                 {
                     MoveUp();
-                    Wait += 1;
-                    if (Wait >= Spaces)
+                    if (transform.position.y + m_Distance >= m_Origin.y)
                     {
                         change = false;
-                        Wait = 0;
                     }
                 }
                 break;
         }
-	}
+    }
 }

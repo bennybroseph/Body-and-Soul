@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/benjamin.odom/Documents/GitHub/Unity Projects/2D Roguelike/Assets/Scenes/Main.unity
+- path: Assets/_Scenes/BenScene.unity
   isLoaded: 1
   isActive: 1
