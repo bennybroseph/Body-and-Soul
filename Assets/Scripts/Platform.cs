@@ -12,9 +12,22 @@ public class Platform : MonoBehaviour {
     [SerializeField]
     protected float m_Time;
     [SerializeField]
-    protected float m_Distance;
+    protected Vector3 m_Distance;
 
     protected Vector3 m_Origin;
+
+    public Vector3 Velocity
+    {
+        get
+        {
+            return m_Velocity;
+        }
+
+        set
+        {
+            m_Velocity = value;
+        }
+    }
 
     virtual protected void Start()
     {
@@ -23,24 +36,30 @@ public class Platform : MonoBehaviour {
 
     protected void MoveForward()
     {
-        transform.Translate(Vector3.right * m_Distance * (Time.deltaTime / m_Time));
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, m_Origin.x, m_Origin.x + m_Distance), transform.position.y, transform.position.z);
+        Velocity = new Vector3(m_Distance.x * (Time.deltaTime / m_Time), Velocity.y, Velocity.z);
+
+        transform.Translate(Velocity);
     }
 
     protected void MoveBack()
     {
-        transform.Translate(Vector3.left * m_Distance * (Time.deltaTime / m_Time));
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, m_Origin.x - m_Distance, m_Origin.x), transform.position.y, transform.position.z);
+        Velocity = new Vector3(-m_Distance.x * (Time.deltaTime / m_Time), Velocity.y, Velocity.z);
+
+        transform.Translate(Velocity);
     }
 
     protected void MoveUp()
     {
-        transform.Translate(Vector3.up * m_Distance * (Time.deltaTime / m_Time));
+        Velocity = new Vector3(Velocity.x, m_Distance.y * (Time.deltaTime / m_Time), Velocity.z);
+
+        transform.Translate(Velocity);
     }
 
     protected void MoveDown()
     {
-        transform.Translate(Vector3.down * m_Distance * (Time.deltaTime / m_Time));
+        Velocity = new Vector3(Velocity.x, -m_Distance.y * (Time.deltaTime / m_Time), Velocity.z);
+
+        transform.Translate(Velocity);
     }
 
     protected void Snap()
