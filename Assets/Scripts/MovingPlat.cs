@@ -4,9 +4,10 @@ using System.Collections;
 public class MovingPlat : Platform
 {
 
-    public string Function;
     [SerializeField]
-    bool change = true;
+    private string Function;
+    [SerializeField]
+    private bool m_Reverse = false;
 
     // Update is called once per frame
     void Update()
@@ -14,79 +15,80 @@ public class MovingPlat : Platform
         switch (Function)
         {
             case "right":
-                if (change == false)
+                if (!m_Reverse)
                 {
                     MoveForward();
-                    if (transform.position.x + m_Distance >= m_Origin.x)
+                    if (m_Origin.x + m_Distance <= transform.position.x)
                     {
-                        change = true;
+                        m_Reverse = true;
                     }
                 }
-                if (change == true)
+                if (m_Reverse)
                 {
                     MoveBack();
-                    if (transform.position.x + m_Distance <= m_Origin.x)
+                    if (m_Origin.x >= transform.position.x)
                     {
-                        change = false;
+                        m_Reverse = false;
                     }
                 }
                 break;
 
             case "left":
-                if (change == false)
+                if (!m_Reverse)
                 {
                     MoveBack();
-                    if (transform.position.x + m_Distance <= m_Origin.x)
+                    if (m_Origin.x - m_Distance >= transform.position.x)
                     {
-                        change = true;
+                        m_Reverse = true;
                     }
                 }
-                if (change == true)
+                if (m_Reverse)
                 {
                     MoveForward();
-                    if (transform.position.x + m_Distance >= m_Origin.x)
+                    if (m_Origin.x <= transform.position.x)
                     {
-                        change = false;
+                        m_Reverse = false;
                     }
                 }
                 break;
 
             case "up":
-                if (change == false)
+                if (!m_Reverse)
                 {
                     MoveUp();
-                    if (transform.position.y + m_Distance >= m_Origin.y)
+                    if (m_Origin.y + m_Distance <= transform.position.y)
                     {
-                        change = true;
+                        m_Reverse = true;
                     }
                 }
-                if (change == true)
+                if (m_Reverse)
                 {
                     MoveDown();
-                    if (transform.position.y + m_Distance <= m_Origin.y)
+                    if (m_Origin.y >= transform.position.y)
                     {
-                        change = false;
+                        m_Reverse = false;
                     }
                 }
                 break;
 
             case "down":
-                if (change == false)
+                if (!m_Reverse)
                 {
                     MoveDown();
-                    if (transform.position.y + m_Distance <= m_Origin.y)
+                    if (m_Origin.y - m_Distance >= transform.position.y)
                     {
-                        change = true;
+                        m_Reverse = true;
                     }
                 }
-                if (change == true)
+                if (m_Reverse)
                 {
                     MoveUp();
-                    if (transform.position.y + m_Distance >= m_Origin.y)
+                    if (m_Origin.y <= transform.position.y)
                     {
-                        change = false;
+                        m_Reverse = false;
                     }
                 }
+                break;
                 break;
         }
     }
