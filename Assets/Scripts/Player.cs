@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     protected virtual void Awake()
     {
-        Debug.Log("Awake");
+        //Debug.Log("Awake");
 
         m_Platforms = new List<Platform>();
         m_CanJump = false;
@@ -43,14 +43,14 @@ public class Player : MonoBehaviour
     // Use this for initialization
     protected virtual void Start()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
 
         m_PrevPos = transform.position;
     }
 
     protected virtual void FixedUpdate()
     {
-        print("FixedUpdate");
+        //print("FixedUpdate");
 
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
         Move();
 
-        if (Mathf.Abs(m_PrevPos.x - transform.position.x) <= 0.001)
+        if (Mathf.Abs(m_Velocity.x) <= 0.001)
         {
             if (Input.GetAxisRaw("Horizontal") == 0 && (m_State == PlayerState.LANDING || m_State == PlayerState.WALKING))
                 m_State = PlayerState.IDLE;
@@ -103,12 +103,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        print("Update");            
+        //print("Update");            
     }
 
     protected virtual void LateUpdate()
     {
-        print("LateUpdate");
+        //print("LateUpdate");
 
         m_Animator.SetInteger("Player_State", (int)m_State);
     }
@@ -117,15 +117,15 @@ public class Player : MonoBehaviour
     {
         transform.position += m_Velocity;
 
+        //print("Number of Items: " + m_Platforms.Count.ToString());
         foreach (Platform platform in m_Platforms)
             transform.position += platform.Velocity;
     }
 
     protected virtual void OnCollisionStay(Collision collision)
     {
-        print("OnCollisionStay");
-
-        m_CanJump = false;
+        //print("OnCollisionStay");
+        
         foreach (ContactPoint contact in collision.contacts)
         {
             if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
@@ -144,10 +144,26 @@ public class Player : MonoBehaviour
     }
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        print("OnCollisionEnter");
+        //print("OnCollisionEnter");
+
+        if (collision.gameObject.GetComponent<Platform>())
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && !m_Platforms.Exists(x => x == collision.gameObject.GetComponent<Platform>()))
+                {
+                    m_Platforms.Add(collision.gameObject.GetComponent<Platform>());
+                }
+            }
+        }
     }
     protected virtual void OnCollisionExit(Collision collision)
     {
-        print("OnCollisionExit");
+        //print("OnCollisionExit");
+
+        if (collision.gameObject.GetComponent<Platform>())
+        {
+            m_Platforms.Remove(collision.gameObject.GetComponent<Platform>());
+        }
     }
 }

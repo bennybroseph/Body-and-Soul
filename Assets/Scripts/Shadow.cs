@@ -4,6 +4,8 @@ using System.Collections;
 public class Shadow : MonoBehaviour
 {
     [SerializeField]
+    protected Vector3 m_Offset;
+    [SerializeField]
     protected GameObject m_GameObject;
     [SerializeField]
     protected SpriteRenderer m_SpriteRenderer;
@@ -17,7 +19,7 @@ public class Shadow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = new Vector3(m_GameObject.transform.position.x + 0.5f, m_GameObject.transform.position.y - 0.5f, m_GameObject.transform.position.z);
+        transform.position = m_GameObject.transform.position + m_Offset;
         m_SpriteRenderer.sprite = m_GameObject.GetComponent<SpriteRenderer>().sprite;
     }
 }

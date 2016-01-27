@@ -5,6 +5,8 @@ public class Camera : MonoBehaviour
 {
     [SerializeField]
     protected GameObject m_Following;
+    [SerializeField]
+    protected Vector3 m_Offset;
 
     // Use this for initialization
     void Start()
@@ -15,6 +17,6 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = new Vector3(m_Following.transform.position.x, m_Following.transform.position.y, m_Following.transform.position.z - 15.0f);
+        transform.position = m_Following.transform.position + m_Offset;
     }
 }

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Shadow.cs" />
      <Compile Include="Assets\Scripts\SnapingPlat.cs" />
+     <Compile Include="Assets\Scripts\Win_Box.cs" />
      <Compile Include="Assets\Scripts\World.cs" />
      <None Include="Assets\Images\spritesheet_jumper.xml" />
  <Reference Include="UnityEngine.UI">
