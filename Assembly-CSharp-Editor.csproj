@@ -47,9 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\TextureAtlasSlicer\Editor\TextureAtlasSlicer.cs" />
      <None Include="Assets\Images\spritesheet_jumper.xml" />
- <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/benjamin.odom/Documents/GitHub/Body-and-Soul/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity 5.1.3/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

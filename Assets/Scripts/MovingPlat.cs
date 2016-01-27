@@ -10,8 +10,9 @@ public class MovingPlat : Platform
     private bool m_Reverse = false;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        m_Velocity = new Vector3(0, 0, 0);
         switch (Function)
         {
             case "right":
@@ -88,7 +89,6 @@ public class MovingPlat : Platform
                         m_Reverse = false;
                     }
                 }
-                break;
                 break;
         }
     }

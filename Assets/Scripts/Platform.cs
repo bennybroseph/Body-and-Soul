@@ -36,30 +36,30 @@ public class Platform : MonoBehaviour {
 
     protected void MoveForward()
     {
-        Velocity = new Vector3(m_Distance.x * (Time.deltaTime / m_Time), Velocity.y, Velocity.z);
+        m_Velocity = new Vector3(m_Distance.x * (Time.deltaTime / m_Time), m_Velocity.y, m_Velocity.z);
 
-        transform.Translate(Velocity);
+        transform.Translate(m_Velocity);
     }
 
     protected void MoveBack()
     {
-        Velocity = new Vector3(-m_Distance.x * (Time.deltaTime / m_Time), Velocity.y, Velocity.z);
+        m_Velocity = new Vector3(-m_Distance.x * (Time.deltaTime / m_Time), m_Velocity.y, m_Velocity.z);
 
-        transform.Translate(Velocity);
+        transform.Translate(m_Velocity);
     }
 
     protected void MoveUp()
     {
-        Velocity = new Vector3(Velocity.x, m_Distance.y * (Time.deltaTime / m_Time), Velocity.z);
+        m_Velocity = new Vector3(m_Velocity.x, m_Distance.y * (Time.deltaTime / m_Time), m_Velocity.z);
 
-        transform.Translate(Velocity);
+        transform.Translate(m_Velocity);
     }
 
     protected void MoveDown()
     {
-        Velocity = new Vector3(Velocity.x, -m_Distance.y * (Time.deltaTime / m_Time), Velocity.z);
+        m_Velocity = new Vector3(m_Velocity.x, -m_Distance.y * (Time.deltaTime / m_Time), m_Velocity.z);
 
-        transform.Translate(Velocity);
+        transform.Translate(m_Velocity);
     }
 
     protected void Snap()
