@@ -47,7 +47,7 @@ public class Game_Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene("AustinScene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -65,5 +65,7 @@ public class Game_Controller : MonoBehaviour
         gameOverText.text = "You Win!";
         restart = true;
         gameOver = true;
+        new WaitForSeconds(2);
+        SceneManager.LoadScene("NewScene");
     }
 }
