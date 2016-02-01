@@ -21,6 +21,6 @@ public class Win_Box : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        TheGame.YouWin();
+        StartCoroutine(TheGame.YouWin());
     }
 }

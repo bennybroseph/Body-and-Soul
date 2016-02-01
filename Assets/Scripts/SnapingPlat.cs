@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SnapingPlat : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
+public class SnapingPlat : MovingPlat {
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 }
