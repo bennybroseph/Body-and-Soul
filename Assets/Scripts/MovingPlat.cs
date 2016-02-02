@@ -57,7 +57,7 @@ public class MovingPlat : Platform
                 if (!m_Reverse)
                 {
                     MoveUp();
-                    if (m_Origin.y + m_Distance.x <= transform.position.y)
+                    if (m_Origin.y + m_Distance.y <= transform.position.y)
                     {
                         m_Reverse = true;
                     }
@@ -76,7 +76,7 @@ public class MovingPlat : Platform
                 if (!m_Reverse)
                 {
                     MoveDown();
-                    if (m_Origin.y - m_Distance.x >= transform.position.y)
+                    if (m_Origin.y - m_Distance.y >= transform.position.y)
                     {
                         m_Reverse = true;
                     }
