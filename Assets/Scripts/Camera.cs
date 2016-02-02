@@ -8,6 +8,18 @@ public class Camera : MonoBehaviour
     [SerializeField]
     protected Vector3 m_Offset;
 
+    public GameObject Following
+    {
+        get
+        {
+            return m_Following;
+        }
+        set
+        {
+            m_Following = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
