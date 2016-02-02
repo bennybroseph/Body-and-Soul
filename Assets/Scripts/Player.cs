@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     Vector3 m_Velocity;
     [SerializeField]
+    Vector3 m_Decay;
+    [SerializeField]
     Vector3 m_Speed;
     [SerializeField]
     Vector3 m_MaxSpeed;
@@ -45,7 +47,7 @@ public class Player : MonoBehaviour
     {
         //Debug.Log("Start");
 
-        m_PrevPos = transform.position;
+        m_PrevPos = transform.position;        
     }
 
     protected virtual void FixedUpdate()
@@ -71,9 +73,9 @@ public class Player : MonoBehaviour
         else if (m_State != PlayerState.JUMPING && m_Velocity.x != 0)
         {
             if (m_Velocity.x > 0)
-                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed.x * Time.deltaTime), 0, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay.x * Time.deltaTime), 0, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
             if (m_Velocity.x < 0)
-                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, 0), m_Velocity.y, m_Velocity.z);
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay.x * Time.deltaTime), -m_MaxSpeed.x, 0), m_Velocity.y, m_Velocity.z);
         }
 
         if (Input.GetAxisRaw("Jump") != 0 && m_CanJump)
@@ -81,10 +83,8 @@ public class Player : MonoBehaviour
             m_State = PlayerState.JUMPING;
 
             m_CanJump = false;
-            m_Velocity = new Vector3(m_Velocity.x, m_MaxSpeed.y, m_Velocity.z);
+            m_Rigidbody.AddForce(new Vector3(0.0f, m_Speed.y, 0.0f));
         }
-
-        m_Velocity = new Vector3(m_Velocity.x, Mathf.Clamp(m_Velocity.y - (m_Speed.y * Time.deltaTime), -m_MaxSpeed.y, m_MaxSpeed.y), m_Velocity.z);
 
         Move();
 
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         }
 
         m_PrevPos = transform.position;
-        m_Rigidbody.velocity = new Vector3(0, 0, 0);
+        //m_Rigidbody.velocity = new Vector3(0, m_Rigidbody.velocity.y, 0);
     }
 
     // Update is called once per frame
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
 
     protected virtual void OnCollisionStay(Collision collision)
     {
-        //print("OnCollisionStay");
+        print("OnCollisionStay");
         
         foreach (ContactPoint contact in collision.contacts)
         {
@@ -135,11 +135,9 @@ public class Player : MonoBehaviour
                 if (m_State == PlayerState.JUMPING)
                     m_State = PlayerState.LANDING;
             }
-            else if (contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && Input.GetAxisRaw("Horizontal") == 1)
-            {
-                if (m_State != PlayerState.JUMPING)
-                    m_Velocity = new Vector3(0, m_Velocity.y, 0);
-            }
+            else if ((contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && m_Velocity.x > 0) || (contact.normal == new Vector3(1.0f, 0.0f, 0.0f) && m_Velocity.x < 0))
+                m_Velocity = new Vector3(0, m_Velocity.y, 0);
+                
         }
     }
     protected virtual void OnCollisionEnter(Collision collision)
