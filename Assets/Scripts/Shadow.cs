@@ -4,22 +4,27 @@ using System.Collections;
 public class Shadow : MonoBehaviour
 {
     [SerializeField]
-    protected Vector3 m_Offset;
+    private Vector3 m_Offset;
     [SerializeField]
-    protected GameObject m_GameObject;
+    private GameObject m_GameObject;
     [SerializeField]
-    protected SpriteRenderer m_SpriteRenderer;
+    private SpriteRenderer m_SpriteRenderer;
 
     // Use this for initialization
     void Start()
     {
-
+        if (m_SpriteRenderer == null)
+            m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        if (m_GameObject == null)
+            m_GameObject = gameObject.transform.parent.gameObject;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         transform.position = m_GameObject.transform.position + m_Offset;
-        m_SpriteRenderer.sprite = m_GameObject.GetComponent<SpriteRenderer>().sprite;
+
+        if(m_GameObject.GetComponent<SpriteRenderer>().sprite != null)
+            m_SpriteRenderer.sprite = m_GameObject.GetComponent<SpriteRenderer>().sprite;
     }
 }
