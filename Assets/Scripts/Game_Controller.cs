@@ -60,12 +60,12 @@ public class Game_Controller : MonoBehaviour
         ThePlayer.GetComponent<Rigidbody>().AddTorque(100, 0, 500);
     }
 
-    public void YouWin()
+    public IEnumerator YouWin()
     {
         gameOverText.text = "You Win!";
         restart = true;
         gameOver = true;
-        new WaitForSeconds(2);
-        SceneManager.LoadScene("NewScene");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("NewScene");      
     }
 }
