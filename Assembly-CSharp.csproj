@@ -46,13 +46,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Actor.cs" />
+     <Compile Include="Assets\Scripts\Background_Script.cs" />
      <Compile Include="Assets\Scripts\Camera.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Game_Controller.cs" />
      <Compile Include="Assets\Scripts\MovingPlat.cs" />
      <Compile Include="Assets\Scripts\Platform.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Shadow.cs" />
      <Compile Include="Assets\Scripts\SnapingPlat.cs" />
+     <Compile Include="Assets\Scripts\TalkingNPC.cs" />
      <Compile Include="Assets\Scripts\Win_Box.cs" />
      <Compile Include="Assets\Scripts\World.cs" />
      <None Include="Assets\Images\spritesheet_jumper.xml" />
