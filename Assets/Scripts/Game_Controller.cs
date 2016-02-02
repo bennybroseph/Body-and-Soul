@@ -19,6 +19,8 @@ public class Game_Controller : MonoBehaviour
     private Player m_Spirit;
     [SerializeField]
     private Camera m_Camera;
+    [SerializeField]
+    private GameObject SpiritMode;
     private SceneManager SceneManagement;
 
     public enum PlayerState { HUMAN, SPIRIT };
@@ -51,6 +53,8 @@ public class Game_Controller : MonoBehaviour
                 m_Camera.Following = m_Spirit.gameObject;
             //m_Human.gameObject.SetActive(m_Human.IsActive);
             //m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
+
+            ChangeSceneMode();
 
             m_StateTimer = 1;
         }
@@ -119,12 +123,14 @@ public class Game_Controller : MonoBehaviour
                 objects[i].GetComponent<MovingPlat>().IsHuman = false;
                 objects[i].GetComponent<MovingPlat>().IsSpirit = true;
                 objects[i].SetActive(false);
+                SpiritMode.SetActive(true);
             }
             else
             {
                 objects[i].GetComponent<MovingPlat>().IsHuman = true;
                 objects[i].GetComponent<MovingPlat>().IsSpirit = false;
                 objects[i].SetActive(true);
+                SpiritMode.SetActive(false);
             }
         }
     }
