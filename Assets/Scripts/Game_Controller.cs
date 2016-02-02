@@ -14,8 +14,19 @@ public class Game_Controller : MonoBehaviour
     [SerializeField]
     private GUIText restartText;
     [SerializeField]
-    private GameObject ThePlayer;
+    private Player m_Human;
+    [SerializeField]
+    private Player m_Spirit;
+    [SerializeField]
+    private Camera m_Camera;
     private SceneManager SceneManagement;
+
+    public enum PlayerState { HUMAN, SPIRIT };
+
+    private PlayerState m_PlayerState = PlayerState.HUMAN;
+
+    [SerializeField]
+    private float m_StateTimer;
 
     void Start()
     {
@@ -27,11 +38,33 @@ public class Game_Controller : MonoBehaviour
         restartText.text = "";
     }
 
+    void FixedUpdate()
+    {
+        if (Input.GetAxisRaw("Switch Form") != 0 && m_StateTimer == 0)
+        {
+            m_Human.IsActive = !m_Human.IsActive;
+            m_Spirit.IsActive = !m_Spirit.IsActive;
+
+            if(m_Human.IsActive)
+                m_Camera.Following = m_Human.gameObject;
+            else
+                m_Camera.Following = m_Spirit.gameObject;
+            //m_Human.gameObject.SetActive(m_Human.IsActive);
+            //m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
+
+            m_StateTimer = 1;
+        }
+        else if (m_StateTimer > 0)
+        {
+            m_StateTimer -= Time.deltaTime;
+            m_StateTimer = Mathf.Clamp(m_StateTimer, 0.0f, m_StateTimer);
+        }
+    }
     void Update()
     {
         if (check)
         {
-            if (ThePlayer.transform.position.y <= -10)
+            if (m_Human.transform.position.y <= -10)
         {
             GameOver();
         }
@@ -56,8 +89,8 @@ public class Game_Controller : MonoBehaviour
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
-        ThePlayer.GetComponent<Rigidbody>().freezeRotation = false;
-        ThePlayer.GetComponent<Rigidbody>().AddTorque(100, 0, 500);
+        m_Human.GetComponent<Rigidbody>().freezeRotation = false;
+        m_Human.GetComponent<Rigidbody>().AddTorque(100, 0, 500);
     }
 
     public IEnumerator YouWin()
