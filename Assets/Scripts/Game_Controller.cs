@@ -66,6 +66,13 @@ public class Game_Controller : MonoBehaviour
         restart = true;
         gameOver = true;
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("NewScene");      
+        if (SceneManager.GetActiveScene().name != "NewScene")
+        {
+            SceneManager.LoadScene("NewScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("BenScene");
+        }   
     }
 }
