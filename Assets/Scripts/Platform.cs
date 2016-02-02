@@ -4,9 +4,9 @@ using System.Collections;
 public class Platform : MonoBehaviour {
 
     [SerializeField]
-    protected bool m_IsHuman;
+    private bool m_IsHuman;
     [SerializeField]
-    protected bool m_IsSpirit;
+    private bool isSpirit;
     [SerializeField]
     protected Vector3 m_Velocity;
     [SerializeField]
@@ -26,6 +26,31 @@ public class Platform : MonoBehaviour {
         set
         {
             m_Velocity = value;
+        }
+    }
+
+    public bool IsHuman
+    {
+        get
+        {
+            return m_IsHuman;
+        }
+
+        set
+        {
+            m_IsHuman = value;
+        }
+    }
+    public bool IsSpirit
+    {
+        get
+        {
+            return isSpirit;
+        }
+
+        set
+        {
+            isSpirit = value;
         }
     }
 
