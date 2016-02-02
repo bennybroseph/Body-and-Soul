@@ -75,4 +75,21 @@ public class Game_Controller : MonoBehaviour
             SceneManager.LoadScene("BenScene");
         }   
     }
+
+    public void ChangeSceneMode()
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Platforms");
+        for(int i = 0; i > objects.Length; i++)
+        {
+            if()
+            {
+
+            }
+
+            if()
+            {
+
+            }
+        }
+    }
 }
