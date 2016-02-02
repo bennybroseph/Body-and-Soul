@@ -85,6 +85,12 @@ public class Game_Controller : MonoBehaviour
         }
     }
 
+    public void LateUpdate()
+    {
+        if (!gameOver)
+            transform.position = m_Human.transform.position;
+    }
+
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
