@@ -1,38 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Player : MonoBehaviour
+public class Player : Actor
 {
     [SerializeField]
-    bool m_IsActive;
+    private bool m_IsActive;
     [SerializeField]
-    float m_HitPoints;
+    private float m_HitPoints;
 
     [SerializeField]
-    Vector3 m_Velocity;
+    private Vector3 m_Velocity;
     [SerializeField]
-    Vector3 m_Decay;
+    private Vector3 m_Decay;
     [SerializeField]
-    Vector3 m_Speed;
+    private Vector3 m_Speed;
     [SerializeField]
-    Vector3 m_MaxSpeed;
+    private Vector3 m_MaxSpeed;
 
-    Vector3 m_PrevPos;
-
-    [SerializeField]
-    bool m_CanJump;
-
-    enum PlayerState { IDLE, WALKING, RUNNING, JUMPING, LANDING };
+    //private Vector3 m_PrevPos;
 
     [SerializeField]
-    PlayerState m_State = PlayerState.IDLE;
-    [SerializeField]
-    Animator m_Animator;
+    private bool m_CanJump;
+
+    enum MovementState { IDLE, WALKING, RUNNING, JUMPING, LANDING };
+
+    enum PlayerState { HUMAN, SPIRIT };
 
     [SerializeField]
-    Rigidbody m_Rigidbody;    
+    private MovementState m_MovementState = MovementState.IDLE;
+    [SerializeField]
+    private PlayerState m_PlayerState = PlayerState.HUMAN;
+    [SerializeField]
+    private Animator m_Animator;
 
-    List<Platform> m_Platforms;
+    [SerializeField]
+    private Rigidbody m_Rigidbody;
+
+    private List<Platform> m_Platforms;
+
+    [SerializeField]
+    private float m_JumpTimer;
 
     protected virtual void Awake()
     {
@@ -43,11 +50,13 @@ public class Player : MonoBehaviour
     }
 
     // Use this for initialization
-    protected virtual void Start()
+    protected override void Start()
     {
         //Debug.Log("Start");
 
-        m_PrevPos = transform.position;        
+        base.Start();
+
+        //m_PrevPos = transform.position;
     }
 
     protected virtual void FixedUpdate()
@@ -56,8 +65,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            if (m_State != PlayerState.JUMPING)
-                m_State = PlayerState.WALKING;
+            if (m_MovementState != MovementState.JUMPING)
+                m_MovementState = MovementState.WALKING;
 
             if (Input.GetAxisRaw("Horizontal") == 1)
             {
@@ -70,7 +79,7 @@ public class Player : MonoBehaviour
                 m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
             }
         }
-        else if (m_State != PlayerState.JUMPING && m_Velocity.x != 0)
+        else if (m_MovementState != MovementState.JUMPING && m_Velocity.x != 0)
         {
             if (m_Velocity.x > 0)
                 m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay.x * Time.deltaTime), 0, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
@@ -80,40 +89,47 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxisRaw("Jump") != 0 && m_CanJump)
         {
-            m_State = PlayerState.JUMPING;
+            if (m_MovementState == MovementState.JUMPING && m_JumpTimer > 0)
+            {
+                m_JumpTimer -= Time.deltaTime;
+                m_Rigidbody.AddForce(new Vector3(0.0f, m_Speed.y, 0.0f));
+            }
+            else if (m_MovementState != MovementState.JUMPING)
+            {
+                m_MovementState = MovementState.JUMPING;
 
-            m_CanJump = false;
-            m_Rigidbody.AddForce(new Vector3(0.0f, m_Speed.y, 0.0f));
+                m_JumpTimer = 0.25f;
+                m_Rigidbody.AddForce(new Vector3(0.0f, m_Decay.y, 0.0f));
+            }
+
+            if (m_JumpTimer <= 0)
+                m_CanJump = false;
         }
+        else if(m_MovementState == MovementState.JUMPING)
+            m_CanJump = false;
 
         Move();
 
         if (Mathf.Abs(m_Velocity.x) <= 0.001)
         {
-            if (Input.GetAxisRaw("Horizontal") == 0 && (m_State == PlayerState.LANDING || m_State == PlayerState.WALKING))
-                m_State = PlayerState.IDLE;
+            if (Input.GetAxisRaw("Horizontal") == 0 && (m_MovementState == MovementState.LANDING || m_MovementState == MovementState.WALKING))
+                m_MovementState = MovementState.IDLE;
 
             m_Velocity = new Vector3(0, m_Velocity.y, m_Velocity.z);
         }
 
-        m_PrevPos = transform.position;
+        //m_PrevPos = transform.position;
         //m_Rigidbody.velocity = new Vector3(0, m_Rigidbody.velocity.y, 0);
-    }
-
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        //print("Update");            
     }
 
     protected virtual void LateUpdate()
     {
         //print("LateUpdate");
 
-        m_Animator.SetInteger("Player_State", (int)m_State);
+        m_Animator.SetInteger("Player_State", (int)m_MovementState);
     }
 
-    protected virtual void Move()
+    protected override void Move()
     {
         transform.position += m_Velocity;
 
@@ -124,20 +140,20 @@ public class Player : MonoBehaviour
 
     protected virtual void OnCollisionStay(Collision collision)
     {
-        print("OnCollisionStay");
-        
+        //print("OnCollisionStay");
+
         foreach (ContactPoint contact in collision.contacts)
         {
             if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
             {
                 m_CanJump = true;
 
-                if (m_State == PlayerState.JUMPING)
-                    m_State = PlayerState.LANDING;
+                if (m_MovementState == MovementState.JUMPING)
+                    m_MovementState = MovementState.LANDING;
             }
             else if ((contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && m_Velocity.x > 0) || (contact.normal == new Vector3(1.0f, 0.0f, 0.0f) && m_Velocity.x < 0))
                 m_Velocity = new Vector3(0, m_Velocity.y, 0);
-                
+
         }
     }
     protected virtual void OnCollisionEnter(Collision collision)

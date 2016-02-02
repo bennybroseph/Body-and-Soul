@@ -11,8 +11,6 @@ public class TalkingNPC : MonoBehaviour {
     GameObject CharFollower;
     [SerializeField]
     string Say;
-    [SerializeField]
-    float Alignment;
     Object clone1;
     Object clone2;
     Object clone3;
@@ -24,7 +22,7 @@ public class TalkingNPC : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        TextBox.transform.localScale += new Vector3(Alignment * Say.Length, 0, 0);
+        TextBox.transform.localScale += new Vector3(0.25f * Say.Length, 0, 0);
         clone1 = Instantiate(TextBox, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, 1), Quaternion.identity);
         clone2 = Instantiate(CharFollower, new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.5f, 1), Quaternion.AngleAxis(45, Vector3.forward));
         clone3 = Instantiate(Text, new Vector3(gameObject.transform.position.x - (Say.Length/8), gameObject.transform.position.y + 2.1f, 0.5f), Quaternion.identity);
