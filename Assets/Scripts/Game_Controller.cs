@@ -81,15 +81,18 @@ public class Game_Controller : MonoBehaviour
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Platforms");
         for(int i = 0; i > objects.Length; i++)
         {
-            //if()
-            //{
-
-            //}
-
-            //if()
-            //{
-
-            //}
+            if (objects[i].GetComponent<MovingPlat>().IsHuman)
+            {
+                objects[i].GetComponent<MovingPlat>().IsHuman = false;
+                objects[i].GetComponent<MovingPlat>().IsSpirit = true;
+                objects[i].SetActive(false);
+            }
+            else
+            {
+                objects[i].GetComponent<MovingPlat>().IsHuman = true;
+                objects[i].GetComponent<MovingPlat>().IsSpirit = false;
+                objects[i].SetActive(true);
+            }
         }
     }
 }
