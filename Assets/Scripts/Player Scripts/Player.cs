@@ -33,6 +33,7 @@ public class Player : Actor
     protected Rigidbody m_Rigidbody;
 
     protected List<Platform> m_Platforms;
+    protected List<Player> m_Players;
 
     [SerializeField]
     protected float m_JumpTimer;
@@ -52,11 +53,25 @@ public class Player : Actor
         }
     }
 
+    public Vector3 Velocity
+    {
+        get
+        {
+            return m_Velocity;
+        }
+
+        set
+        {
+            m_Velocity = value;
+        }
+    }
+
     protected virtual void Awake()
     {
         //Debug.Log("Awake");
 
         m_Platforms = new List<Platform>();
+        m_Players = new List<Player>();
         m_CanJump = false;
     }
 
@@ -153,6 +168,8 @@ public class Player : Actor
         //print("Number of Items: " + m_Platforms.Count.ToString());
         foreach (Platform platform in m_Platforms)
             transform.position += platform.Velocity;
+        foreach (Player player in m_Players)
+            transform.position += player.Velocity;
     }
 
     protected virtual void OnCollisionStay(Collision collision)
@@ -187,6 +204,16 @@ public class Player : Actor
                 }
             }
         }
+        if (collision.gameObject.GetComponent<Player>())
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && !m_Players.Exists(x => x == collision.gameObject.GetComponent<Player>()))
+                {
+                    m_Players.Add(collision.gameObject.GetComponent<Player>());
+                }
+            }
+        }
     }
     protected virtual void OnCollisionExit(Collision collision)
     {
@@ -195,6 +222,10 @@ public class Player : Actor
         if (collision.gameObject.GetComponent<Platform>())
         {
             m_Platforms.Remove(collision.gameObject.GetComponent<Platform>());
+        }
+        if (collision.gameObject.GetComponent<Player>())
+        {
+            m_Players.Remove(collision.gameObject.GetComponent<Player>());
         }
     }
 }
