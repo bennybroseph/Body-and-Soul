@@ -1,0 +1,2404 @@
+fileFormatVersion: 2
+guid: d43bd46c0321cf642963134c2dc1d07e
+timeCreated: 1452712345
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bronze_1.png
+    21300002: bronze_2.png
+    21300004: bronze_3.png
+    21300006: bronze_4.png
+    21300008: bubble.png
+    21300010: bunny1_hurt.png
+    21300012: bunny1_jump.png
+    21300014: bunny1_ready.png
+    21300016: bunny1_stand.png
+    21300018: bunny1_walk1.png
+    21300020: bunny1_walk2.png
+    21300022: bunny2_hurt.png
+    21300024: bunny2_jump.png
+    21300026: bunny2_ready.png
+    21300028: bunny2_stand.png
+    21300030: bunny2_walk1.png
+    21300032: bunny2_walk2.png
+    21300034: cactus.png
+    21300036: carrot.png
+    21300038: carrot_gold.png
+    21300040: carrots.png
+    21300042: cloud.png
+    21300044: coin_bronze.png
+    21300046: coin_gold.png
+    21300048: coin_silver.png
+    21300050: flame.png
+    21300052: flyMan_fly.png
+    21300054: flyMan_jump.png
+    21300056: flyMan_stand.png
+    21300058: flyMan_still_fly.png
+    21300060: flyMan_still_jump.png
+    21300062: flyMan_still_stand.png
+    21300064: gold_1.png
+    21300066: gold_2.png
+    21300068: gold_3.png
+    21300070: gold_4.png
+    21300072: grass1.png
+    21300074: grass2.png
+    21300076: grass_brown1.png
+    21300078: grass_brown2.png
+    21300080: ground_cake.png
+    21300082: ground_cake_broken.png
+    21300084: ground_cake_small.png
+    21300086: ground_cake_small_broken.png
+    21300088: ground_grass.png
+    21300090: ground_grass_broken.png
+    21300092: ground_grass_small.png
+    21300094: ground_grass_small_broken.png
+    21300096: ground_sand.png
+    21300098: ground_sand_broken.png
+    21300100: ground_sand_small.png
+    21300102: ground_sand_small_broken.png
+    21300104: ground_snow.png
+    21300106: ground_snow_broken.png
+    21300108: ground_snow_small.png
+    21300110: ground_snow_small_broken.png
+    21300112: ground_stone.png
+    21300114: ground_stone_broken.png
+    21300116: ground_stone_small.png
+    21300118: ground_stone_small_broken.png
+    21300120: ground_wood.png
+    21300122: ground_wood_broken.png
+    21300124: ground_wood_small.png
+    21300126: ground_wood_small_broken.png
+    21300128: jetpack.png
+    21300130: jetpack_item.png
+    21300132: lifes.png
+    21300134: lighting_blue.png
+    21300136: lighting_yellow.png
+    21300138: mushroom_brown.png
+    21300140: mushroom_red.png
+    21300142: particle_beige.png
+    21300144: particle_blue.png
+    21300146: particle_brown.png
+    21300148: particle_darkBrown.png
+    21300150: particle_darkGrey.png
+    21300152: particle_green.png
+    21300154: particle_grey.png
+    21300156: particle_pink.png
+    21300158: portal_orange.png
+    21300160: portal_orangeParticle.png
+    21300162: portal_yellow.png
+    21300164: portal_yellowParticle.png
+    21300166: powerup_bubble.png
+    21300168: powerup_bunny.png
+    21300170: powerup_empty.png
+    21300172: powerup_jetpack.png
+    21300174: powerup_wings.png
+    21300176: silver_1.png
+    21300178: silver_2.png
+    21300180: silver_3.png
+    21300182: silver_4.png
+    21300184: smoke.png
+    21300186: spikeBall1.png
+    21300188: spikeBall_2.png
+    21300190: spikeMan_jump.png
+    21300192: spikeMan_stand.png
+    21300194: spikeMan_walk1.png
+    21300196: spikeMan_walk2.png
+    21300198: spike_bottom.png
+    21300200: spike_top.png
+    21300202: spikes_bottom.png
+    21300204: spikes_top.png
+    21300206: spring.png
+    21300208: springMan_hurt.png
+    21300210: springMan_stand.png
+    21300212: spring_in.png
+    21300214: spring_out.png
+    21300216: sun1.png
+    21300218: sun2.png
+    21300220: wingMan1.png
+    21300222: wingMan2.png
+    21300224: wingMan3.png
+    21300226: wingMan4.png
+    21300228: wingMan5.png
+    21300230: wing_left.png
+    21300232: wing_right.png
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bronze_1.png
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1668
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 42}
+        - {x: -42, y: 28}
+        - {x: -42, y: -26}
+        - {x: -24, y: -42}
+        - {x: 35, y: -42}
+        - {x: 42, y: -29}
+        - {x: 42, y: 37}
+        - {x: 34, y: 42}
+    - name: bronze_2.png
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1758
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 42}
+        - {x: -25, y: 42}
+        - {x: -33, y: 34}
+        - {x: -33, y: -28}
+        - {x: -30, y: -42}
+        - {x: 32, y: -42}
+        - {x: 33, y: -37}
+        - {x: 33, y: 39}
+        - {x: 32, y: 40}
+    - name: bronze_3.png
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1848
+        width: 50
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 42}
+        - {x: -25, y: 36}
+        - {x: -25, y: -30}
+        - {x: -21, y: -42}
+        - {x: 25, y: -42}
+        - {x: 25, y: 37}
+        - {x: 19, y: 42}
+    - name: bronze_4.png
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1558
+        width: 14
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: bubble.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 211
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 105.5, y: 32.5}
+        - {x: 88.5, y: 74.5}
+        - {x: 67.5, y: 93.5}
+        - {x: 39.5, y: 107.5}
+        - {x: -24.5, y: 107.5}
+        - {x: -61.5, y: 95.5}
+        - {x: -89.5, y: 74.5}
+        - {x: -105.5, y: 40.5}
+        - {x: -105.5, y: -36.5}
+        - {x: -81.5, y: -89.5}
+        - {x: -42.5, y: -107.5}
+        - {x: 29.5, y: -107.5}
+        - {x: 50.5, y: -105.5}
+        - {x: 89.5, y: -72.5}
+        - {x: 105.5, y: -41.5}
+    - name: bunny1_hurt.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 928
+        width: 150
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 87}
+        - {x: -75, y: 37}
+        - {x: -75, y: -87}
+        - {x: 70, y: -87}
+        - {x: 75, y: -84}
+        - {x: 75, y: 40}
+        - {x: 70, y: 87}
+    - name: bunny1_jump.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1104
+        width: 150
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: 90.5}
+        - {x: -31, y: 90.5}
+        - {x: -58, y: 73.5}
+        - {x: -75, y: -35.5}
+        - {x: -75, y: -77.5}
+        - {x: -69, y: -90.5}
+        - {x: 68, y: -90.5}
+        - {x: 75, y: -77.5}
+        - {x: 75, y: -35.5}
+        - {x: 36, y: 89.5}
+    - name: bunny1_ready.png
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 794
+        width: 120
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 91.5}
+        - {x: 42, y: 95.5}
+        - {x: -56, y: 95.5}
+        - {x: -60, y: 94.5}
+        - {x: -60, y: -90.5}
+        - {x: -53, y: -95.5}
+        - {x: 41, y: -95.5}
+        - {x: 60, y: -70.5}
+        - {x: 60, y: 10.5}
+    - name: bunny1_stand.png
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1441
+        width: 120
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 100.5}
+        - {x: -32, y: 100.5}
+        - {x: -49, y: 95.5}
+        - {x: -60, y: 61.5}
+        - {x: -60, y: -62.5}
+        - {x: -48, y: -100.5}
+        - {x: 44, y: -100.5}
+        - {x: 60, y: -79.5}
+        - {x: 60, y: 57.5}
+        - {x: 54, y: 88.5}
+    - name: bunny1_walk1.png
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 987
+        width: 120
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 100.5}
+        - {x: -60, y: 66.5}
+        - {x: -60, y: -82.5}
+        - {x: -53, y: -100.5}
+        - {x: 42, y: -100.5}
+        - {x: 60, y: -83.5}
+        - {x: 60, y: 100.5}
+    - name: bunny1_walk2.png
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 383
+        width: 120
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 60, y: 22.5}
+        - {x: 40, y: 89.5}
+        - {x: 30, y: 103.5}
+        - {x: -29, y: 103.5}
+        - {x: -60, y: 75.5}
+        - {x: -60, y: -72.5}
+        - {x: -45, y: -103.5}
+        - {x: 36, y: -103.5}
+        - {x: 33, y: -97.5}
+        - {x: 30, y: -93.5}
+        - {x: 60, y: -47.5}
+    - name: bunny2_hurt.png
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 8
+        width: 150
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62, y: 87}
+        - {x: -75, y: -47}
+        - {x: -75, y: -75}
+        - {x: -64, y: -87}
+        - {x: 69, y: -87}
+        - {x: 75, y: -83}
+        - {x: 75, y: -12}
+        - {x: 57, y: 87}
+    - name: bunny2_jump.png
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 207
+        width: 150
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 90.5}
+        - {x: 2, y: 84.5}
+        - {x: 1, y: 72.5}
+        - {x: -2, y: 85.5}
+        - {x: -5, y: 90.5}
+        - {x: -29, y: 90.5}
+        - {x: -35, y: 89.5}
+        - {x: -75, y: -54.5}
+        - {x: -75, y: -90.5}
+        - {x: 75, y: -90.5}
+        - {x: 75, y: -20.5}
+        - {x: 36, y: 76.5}
+        - {x: 23, y: 90.5}
+    - name: bunny2_ready.png
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 592
+        width: 121
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 95.5}
+        - {x: -60.5, y: 56.5}
+        - {x: -60.5, y: -64.5}
+        - {x: -47.5, y: -95.5}
+        - {x: 44.5, y: -95.5}
+        - {x: 60.5, y: -85.5}
+        - {x: 60.5, y: 38.5}
+        - {x: 39.5, y: 95.5}
+    - name: bunny2_stand.png
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1847
+        width: 121
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 100.5}
+        - {x: -47.5, y: 100.5}
+        - {x: -60.5, y: 89.5}
+        - {x: -60.5, y: -100.5}
+        - {x: 60.5, y: -100.5}
+        - {x: 60.5, y: 64.5}
+        - {x: 43.5, y: 95.5}
+    - name: bunny2_walk1.png
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1644
+        width: 121
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.5, y: 100.5}
+        - {x: -17.5, y: 100.5}
+        - {x: -60.5, y: 18.5}
+        - {x: -60.5, y: -66.5}
+        - {x: -55.5, y: -86.5}
+        - {x: -48.5, y: -100.5}
+        - {x: 39.5, y: -100.5}
+        - {x: 60.5, y: -86.5}
+        - {x: 60.5, y: 66.5}
+    - name: bunny2_walk2.png
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1190
+        width: 121
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.5, y: 103.5}
+        - {x: -15.5, y: 103.5}
+        - {x: -60.5, y: 21.5}
+        - {x: -60.5, y: -63.5}
+        - {x: -23.5, y: -103.5}
+        - {x: 37.5, y: -103.5}
+        - {x: 60.5, y: -57.5}
+        - {x: 60.5, y: 20.5}
+    - name: cactus.png
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1754
+        width: 117
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.5, y: 80}
+        - {x: -57.5, y: 80}
+        - {x: -58.5, y: 79}
+        - {x: -58.5, y: -44}
+        - {x: -42.5, y: -80}
+        - {x: 25.5, y: -80}
+        - {x: 58.5, y: -4}
+        - {x: 58.5, y: 45}
+        - {x: 55.5, y: 55}
+    - name: carrot.png
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 245
+        width: 78
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 35}
+        - {x: -36, y: 35}
+        - {x: -39, y: 31}
+        - {x: -39, y: 9}
+        - {x: 9, y: -35}
+        - {x: 39, y: -35}
+        - {x: 39, y: -13}
+        - {x: 37, y: -6}
+    - name: carrot_gold.png
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 317
+        width: 78
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 35}
+        - {x: -36, y: 35}
+        - {x: -39, y: 31}
+        - {x: -39, y: 9}
+        - {x: 9, y: -35}
+        - {x: 39, y: -35}
+        - {x: 39, y: -13}
+        - {x: 37, y: -6}
+    - name: carrots.png
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1445
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 24.5}
+        - {x: -26, y: 24.5}
+        - {x: -27, y: 21.5}
+        - {x: -27, y: -0.5}
+        - {x: -11, y: -21.5}
+        - {x: 0, y: -24.5}
+        - {x: 27, y: -24.5}
+        - {x: 27, y: 0.5}
+        - {x: 26, y: 4.5}
+    - name: cloud.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 762
+        width: 260
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 67}
+        - {x: -39, y: 67}
+        - {x: -47, y: 65}
+        - {x: -126, y: 5}
+        - {x: -130, y: -12}
+        - {x: -130, y: -52}
+        - {x: -118, y: -56}
+        - {x: -82, y: -67}
+        - {x: 53, y: -67}
+        - {x: 130, y: -58}
+        - {x: 130, y: -17}
+        - {x: 90, y: 29}
+    - name: coin_bronze.png
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 597
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 30.5}
+        - {x: -30, y: -21.5}
+        - {x: -27, y: -30.5}
+        - {x: 20, y: -30.5}
+        - {x: 30, y: -26.5}
+        - {x: 30, y: 30.5}
+    - name: coin_gold.png
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 6
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 30.5}
+        - {x: -16.5, y: 30.5}
+        - {x: -30.5, y: 23.5}
+        - {x: -30.5, y: -24.5}
+        - {x: -18.5, y: -30.5}
+        - {x: 25.5, y: -30.5}
+        - {x: 30.5, y: -17.5}
+        - {x: 30.5, y: 21.5}
+        - {x: 21.5, y: 29.5}
+    - name: coin_silver.png
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 6
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 30.5}
+        - {x: -30.5, y: 19.5}
+        - {x: -30.5, y: -23.5}
+        - {x: -21.5, y: -30.5}
+        - {x: 25.5, y: -30.5}
+        - {x: 30.5, y: -18.5}
+        - {x: 30.5, y: 22.5}
+        - {x: 21.5, y: 30.5}
+    - name: flame.png
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 235
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 40}
+        - {x: -20.5, y: 35}
+        - {x: -20.5, y: -27}
+        - {x: -15.5, y: -38}
+        - {x: -9.5, y: -40}
+        - {x: 10.5, y: -40}
+        - {x: 20.5, y: -21}
+        - {x: 20.5, y: 40}
+    - name: flyMan_fly.png
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1399
+        width: 122
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: -69.5}
+        - {x: 39, y: -69.5}
+        - {x: 58, y: -29.5}
+        - {x: 61, y: -17.5}
+        - {x: 61, y: 69.5}
+        - {x: -55, y: 69.5}
+        - {x: -61, y: 63.5}
+        - {x: -61, y: -65.5}
+        - {x: -49, y: -69.5}
+        - {x: -10, y: -69.5}
+        - {x: -3, y: -62.5}
+        - {x: 6, y: -68.5}
+    - name: flyMan_jump.png
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 379
+        width: 122
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 67.5}
+        - {x: -61, y: -67.5}
+        - {x: 61, y: -67.5}
+        - {x: 61, y: 63.5}
+        - {x: 56, y: 67.5}
+    - name: flyMan_stand.png
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 238
+        width: 122
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 69.5}
+        - {x: -61, y: 68.5}
+        - {x: -61, y: -69.5}
+        - {x: 60, y: -69.5}
+        - {x: 61, y: -62.5}
+        - {x: 61, y: 69.5}
+    - name: flyMan_still_fly.png
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 249
+        width: 120
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 66}
+        - {x: -60, y: 23}
+        - {x: -55, y: -52}
+        - {x: -41, y: -66}
+        - {x: 60, y: -66}
+        - {x: 60, y: 66}
+    - name: flyMan_still_jump.png
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 119
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 64}
+        - {x: -60, y: -64}
+        - {x: 60, y: -64}
+        - {x: 60, y: 64}
+    - name: flyMan_still_stand.png
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1916
+        width: 120
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 66}
+        - {x: -60, y: -18}
+        - {x: -53, y: -66}
+        - {x: 60, y: -66}
+        - {x: 60, y: 66}
+    - name: gold_1.png
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 33
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 42}
+        - {x: -42, y: 35}
+        - {x: -42, y: -31}
+        - {x: -38, y: -42}
+        - {x: 32, y: -42}
+        - {x: 42, y: -39}
+        - {x: 42, y: 26}
+        - {x: 30, y: 42}
+    - name: gold_2.png
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1964
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: -31}
+        - {x: -29, y: -42}
+        - {x: 33, y: -42}
+        - {x: 33, y: 42}
+        - {x: -24, y: 42}
+        - {x: -33, y: 36}
+    - name: gold_3.png
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 390
+        width: 50
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 42}
+        - {x: -25, y: 35}
+        - {x: -25, y: -29}
+        - {x: -15, y: -42}
+        - {x: 16, y: -42}
+        - {x: 25, y: -29}
+        - {x: 25, y: 29}
+        - {x: 16, y: 42}
+    - name: gold_4.png
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1313
+        width: 15
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: grass1.png
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 114
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 28.5}
+        - {x: -25, y: 28.5}
+        - {x: -29, y: 16.5}
+        - {x: -29, y: -9.5}
+        - {x: -27, y: -18.5}
+        - {x: -23, y: -28.5}
+        - {x: 26, y: -28.5}
+        - {x: 29, y: -25.5}
+        - {x: 29, y: -3.5}
+        - {x: 19, y: 24.5}
+    - name: grass2.png
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 47
+        width: 82
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 35}
+        - {x: -41, y: 24}
+        - {x: -41, y: -35}
+        - {x: 37, y: -35}
+        - {x: 41, y: -27}
+        - {x: 41, y: 3}
+        - {x: 24, y: 35}
+    - name: grass_brown1.png
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 928
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 28.5}
+        - {x: -25, y: 28.5}
+        - {x: -29, y: 16.5}
+        - {x: -29, y: -9.5}
+        - {x: -27, y: -18.5}
+        - {x: -23, y: -28.5}
+        - {x: 26, y: -28.5}
+        - {x: 29, y: -25.5}
+        - {x: 29, y: -3.5}
+        - {x: 19, y: 24.5}
+    - name: grass_brown2.png
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1226
+        width: 82
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 35}
+        - {x: -41, y: 24}
+        - {x: -41, y: -35}
+        - {x: 37, y: -35}
+        - {x: 41, y: -27}
+        - {x: 41, y: 3}
+        - {x: 24, y: 35}
+    - name: ground_cake.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1378
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 3}
+        - {x: 190, y: 40}
+    - name: ground_cake_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1954
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 187, y: 47}
+        - {x: -184, y: 47}
+        - {x: -186, y: 46}
+        - {x: -190, y: 40}
+        - {x: -190, y: 8}
+        - {x: -176, y: -23}
+        - {x: -166, y: -45}
+        - {x: -164, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 3}
+        - {x: 190, y: 41}
+    - name: ground_cake_small.png
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 492
+        width: 201
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100.5, y: 50}
+        - {x: -100.5, y: -11}
+        - {x: -87.5, y: -47}
+        - {x: -55.5, y: -50}
+        - {x: 90.5, y: -50}
+        - {x: 100.5, y: -16}
+        - {x: 100.5, y: 50}
+    - name: ground_cake_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 796
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100, y: 50}
+        - {x: -100, y: 6}
+        - {x: -90, y: -40}
+        - {x: -74, y: -46}
+        - {x: -11, y: -50}
+        - {x: 79, y: -50}
+        - {x: 100, y: -3}
+        - {x: 100, y: 50}
+    - name: ground_grass.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1666
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 3}
+        - {x: 190, y: 40}
+    - name: ground_grass_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1570
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 189, y: 47}
+        - {x: -183, y: 47}
+        - {x: -186, y: 46}
+        - {x: -190, y: 40}
+        - {x: -190, y: 8}
+        - {x: -176, y: -23}
+        - {x: -166, y: -45}
+        - {x: -164, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: -3}
+        - {x: 190, y: 45}
+    - name: ground_grass_small.png
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 286
+        width: 201
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100.5, y: 50}
+        - {x: -100.5, y: -11}
+        - {x: -87.5, y: -47}
+        - {x: -55.5, y: -50}
+        - {x: 90.5, y: -50}
+        - {x: 100.5, y: -16}
+        - {x: 100.5, y: 50}
+    - name: ground_grass_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1744
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100, y: 50}
+        - {x: -100, y: 6}
+        - {x: -90, y: -40}
+        - {x: -74, y: -46}
+        - {x: -11, y: -50}
+        - {x: 79, y: -50}
+        - {x: 100, y: -3}
+        - {x: 100, y: 50}
+    - name: ground_sand.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1282
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 3}
+        - {x: 190, y: 40}
+    - name: ground_sand_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 189, y: 47}
+        - {x: -183, y: 47}
+        - {x: -186, y: 46}
+        - {x: -190, y: 40}
+        - {x: -190, y: 8}
+        - {x: -176, y: -23}
+        - {x: -166, y: -45}
+        - {x: -164, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: -3}
+        - {x: 190, y: 45}
+    - name: ground_sand_small.png
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 69
+        width: 201
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100.5, y: 50}
+        - {x: -100.5, y: -11}
+        - {x: -87.5, y: -47}
+        - {x: -55.5, y: -50}
+        - {x: 90.5, y: -50}
+        - {x: 100.5, y: -16}
+        - {x: 100.5, y: 50}
+    - name: ground_sand_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1846
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100, y: 50}
+        - {x: -100, y: 6}
+        - {x: -90, y: -40}
+        - {x: -74, y: -46}
+        - {x: -11, y: -50}
+        - {x: 79, y: -50}
+        - {x: 100, y: -3}
+        - {x: 100, y: 50}
+    - name: ground_snow.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1186
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -38, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 3}
+        - {x: 190, y: 40}
+    - name: ground_snow_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1474
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 190, y: 45}
+        - {x: 185, y: 47}
+        - {x: -184, y: 47}
+        - {x: -190, y: 42}
+        - {x: -190, y: 8}
+        - {x: -175, y: -25}
+        - {x: -166, y: -45}
+        - {x: -164, y: -47}
+        - {x: -51, y: -47}
+        - {x: 158, y: -39}
+        - {x: 166, y: -32}
+        - {x: 190, y: 5}
+    - name: ground_snow_small.png
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 184
+        width: 201
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100.5, y: 50}
+        - {x: -100.5, y: -11}
+        - {x: -87.5, y: -47}
+        - {x: -55.5, y: -50}
+        - {x: 90.5, y: -50}
+        - {x: 100.5, y: -16}
+        - {x: 100.5, y: 50}
+    - name: ground_snow_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1642
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -100, y: 50}
+        - {x: -100, y: 6}
+        - {x: -90, y: -40}
+        - {x: -74, y: -46}
+        - {x: -11, y: -50}
+        - {x: 79, y: -50}
+        - {x: 100, y: -3}
+        - {x: 100, y: 50}
+    - name: ground_stone.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1858
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 46}
+        - {x: 182, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -39, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 0}
+        - {x: 190, y: 43}
+    - name: ground_stone_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1762
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 190, y: 43}
+        - {x: 189, y: 47}
+        - {x: -183, y: 47}
+        - {x: -186, y: 46}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -164, y: -47}
+        - {x: -51, y: -47}
+        - {x: 158, y: -39}
+        - {x: 167, y: -31}
+        - {x: 190, y: -1}
+    - name: ground_stone_small.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1540
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96, y: 50}
+        - {x: -100, y: 47}
+        - {x: -100, y: 3}
+        - {x: -90, y: -50}
+        - {x: 89, y: -50}
+        - {x: 100, y: -16}
+        - {x: 100, y: 50}
+    - name: ground_stone_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 660
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99, y: 50}
+        - {x: -100, y: 49}
+        - {x: -100, y: 4}
+        - {x: -91, y: -41}
+        - {x: -74, y: -46}
+        - {x: -12, y: -50}
+        - {x: 80, y: -50}
+        - {x: 100, y: -9}
+        - {x: 100, y: 50}
+    - name: ground_wood.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 994
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: 46}
+        - {x: 182, y: 47}
+        - {x: -185, y: 47}
+        - {x: -190, y: 40}
+        - {x: -190, y: 7}
+        - {x: -166, y: -45}
+        - {x: -165, y: -47}
+        - {x: -39, y: -47}
+        - {x: 160, y: -42}
+        - {x: 190, y: 0}
+        - {x: 190, y: 43}
+    - name: ground_wood_broken.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1090
+        width: 380
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 190, y: 39}
+        - {x: 185, y: 45}
+        - {x: 182, y: 47}
+        - {x: -183, y: 47}
+        - {x: -186, y: 46}
+        - {x: -190, y: 40}
+        - {x: -190, y: 3}
+        - {x: -165, y: -47}
+        - {x: -51, y: -47}
+        - {x: 158, y: -39}
+        - {x: 167, y: -31}
+        - {x: 190, y: 9}
+    - name: ground_wood_small.png
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 390
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96, y: 50}
+        - {x: -100, y: 47}
+        - {x: -100, y: 3}
+        - {x: -90, y: -50}
+        - {x: 89, y: -50}
+        - {x: 100, y: -16}
+        - {x: 100, y: 50}
+    - name: ground_wood_small_broken.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1948
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99, y: 50}
+        - {x: -100, y: 49}
+        - {x: -100, y: 4}
+        - {x: -91, y: -41}
+        - {x: -74, y: -46}
+        - {x: -12, y: -50}
+        - {x: 80, y: -50}
+        - {x: 100, y: -9}
+        - {x: 100, y: 50}
+    - name: jetpack.png
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 45
+        width: 133
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 80}
+        - {x: -66.5, y: -80}
+        - {x: 66.5, y: -80}
+        - {x: 66.5, y: 76}
+        - {x: 65.5, y: 80}
+    - name: jetpack_item.png
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 882
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 38.5}
+        - {x: -32.5, y: -38.5}
+        - {x: 32.5, y: -38.5}
+        - {x: 32.5, y: 37.5}
+        - {x: 30.5, y: 38.5}
+    - name: lifes.png
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 41
+        width: 52
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 35.5}
+        - {x: -26, y: 10.5}
+        - {x: -26, y: -27.5}
+        - {x: -20, y: -34.5}
+        - {x: -18, y: -35.5}
+        - {x: 25, y: -35.5}
+        - {x: 26, y: -34.5}
+        - {x: 26, y: 19.5}
+        - {x: 21, y: 35.5}
+    - name: lighting_blue.png
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1481
+        width: 55
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 57}
+        - {x: -27.5, y: 41}
+        - {x: -27.5, y: -39}
+        - {x: -3.5, y: -57}
+        - {x: 20.5, y: -57}
+        - {x: 26.5, y: -52}
+        - {x: 27.5, y: -51}
+        - {x: 27.5, y: 57}
+    - name: lighting_yellow.png
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1934
+        width: 55
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 57}
+        - {x: -27.5, y: 41}
+        - {x: -27.5, y: -39}
+        - {x: -3.5, y: -57}
+        - {x: 20.5, y: -57}
+        - {x: 26.5, y: -52}
+        - {x: 27.5, y: -51}
+        - {x: 27.5, y: 57}
+    - name: mushroom_brown.png
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 389
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 42.5}
+        - {x: -40.5, y: 37.5}
+        - {x: -40.5, y: -11.5}
+        - {x: -21.5, y: -42.5}
+        - {x: 21.5, y: -42.5}
+        - {x: 39.5, y: -32.5}
+        - {x: 40.5, y: -27.5}
+        - {x: 40.5, y: 42.5}
+    - name: mushroom_red.png
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1496
+        width: 81
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 49.5}
+        - {x: -40.5, y: -16.5}
+        - {x: -30.5, y: -49.5}
+        - {x: 20.5, y: -49.5}
+        - {x: 40.5, y: -7.5}
+        - {x: 40.5, y: 49.5}
+    - name: particle_beige.png
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 2
+        width: 58
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 20.5}
+        - {x: -29, y: 9.5}
+        - {x: -29, y: -9.5}
+        - {x: -28, y: -20.5}
+        - {x: 22, y: -20.5}
+        - {x: 29, y: -13.5}
+        - {x: 29, y: 4.5}
+        - {x: 17, y: 20.5}
+    - name: particle_blue.png
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 831
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 24.5}
+        - {x: -3.5, y: 24.5}
+        - {x: -25.5, y: 11.5}
+        - {x: -25.5, y: -3.5}
+        - {x: -16.5, y: -24.5}
+        - {x: 21.5, y: -24.5}
+        - {x: 22.5, y: -23.5}
+        - {x: 25.5, y: -10.5}
+        - {x: 25.5, y: 9.5}
+    - name: particle_brown.png
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 123
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 24}
+        - {x: -14, y: 24}
+        - {x: -22, y: 13}
+        - {x: -22, y: -8}
+        - {x: -15, y: -23}
+        - {x: -6, y: -24}
+        - {x: 17, y: -24}
+        - {x: 21, y: -10}
+        - {x: 22, y: -5}
+        - {x: 22, y: 17}
+    - name: particle_darkBrown.png
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 21.5}
+        - {x: -27, y: 19.5}
+        - {x: -27, y: 1.5}
+        - {x: -18, y: -21.5}
+        - {x: 27, y: -21.5}
+        - {x: 27, y: 17.5}
+        - {x: 17, y: 21.5}
+    - name: particle_darkGrey.png
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 641
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 21.5}
+        - {x: -22.5, y: 21.5}
+        - {x: -25.5, y: 17.5}
+        - {x: -25.5, y: -20.5}
+        - {x: -24.5, y: -21.5}
+        - {x: 22.5, y: -21.5}
+        - {x: 23.5, y: -20.5}
+        - {x: 25.5, y: -6.5}
+        - {x: 25.5, y: 14.5}
+    - name: particle_green.png
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 999
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 23}
+        - {x: -24, y: 8}
+        - {x: -24, y: -4}
+        - {x: -4, y: -23}
+        - {x: 19, y: -23}
+        - {x: 24, y: -5}
+        - {x: 24, y: 17}
+        - {x: 11, y: 23}
+    - name: particle_grey.png
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 20.5}
+        - {x: -5, y: 20.5}
+        - {x: -19, y: 13.5}
+        - {x: -19, y: -20.5}
+        - {x: 4, y: -20.5}
+        - {x: 17, y: -18.5}
+        - {x: 19, y: -5.5}
+        - {x: 19, y: 15.5}
+    - name: particle_pink.png
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1916
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 23}
+        - {x: -26.5, y: 17}
+        - {x: -26.5, y: -4}
+        - {x: -19.5, y: -23}
+        - {x: 21.5, y: -23}
+        - {x: 26.5, y: -8}
+        - {x: 26.5, y: 17}
+        - {x: 13.5, y: 23}
+    - name: portal_orange.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 678
+        width: 230
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 41}
+        - {x: -61, y: 40}
+        - {x: -103, y: 24}
+        - {x: -115, y: 11}
+        - {x: -115, y: -20}
+        - {x: -78, y: -41}
+        - {x: 61, y: -41}
+        - {x: 91, y: -39}
+        - {x: 115, y: -15}
+        - {x: 115, y: 18}
+        - {x: 73, y: 41}
+      - - {x: -59, y: -18}
+        - {x: -22, y: 27}
+        - {x: 76, y: 7}
+        - {x: 12, y: -28}
+    - name: portal_orangeParticle.png
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 774
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: portal_yellow.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 594
+        width: 230
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 41}
+        - {x: -115, y: 38}
+        - {x: -115, y: -36}
+        - {x: -99, y: -41}
+        - {x: 100, y: -41}
+        - {x: 115, y: -30}
+        - {x: 115, y: 21}
+        - {x: 99, y: 41}
+      - - {x: -52, y: 21}
+        - {x: 20, y: 27}
+        - {x: 76, y: 7}
+        - {x: 12, y: -28}
+    - name: portal_yellowParticle.png
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 774
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: powerup_bubble.png
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1844
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 35}
+        - {x: -35.5, y: 17}
+        - {x: -35.5, y: -8}
+        - {x: -17.5, y: -35}
+        - {x: 6.5, y: -35}
+        - {x: 35.5, y: -6}
+        - {x: 35.5, y: 6}
+        - {x: 7.5, y: 35}
+    - name: powerup_bunny.png
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 758
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 35}
+        - {x: -35.5, y: 17}
+        - {x: -35.5, y: -8}
+        - {x: -17.5, y: -35}
+        - {x: 6.5, y: -35}
+        - {x: 35.5, y: -6}
+        - {x: 35.5, y: 6}
+        - {x: 7.5, y: 35}
+    - name: powerup_empty.png
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 317
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 35}
+        - {x: -35.5, y: 17}
+        - {x: -35.5, y: -8}
+        - {x: -17.5, y: -35}
+        - {x: 6.5, y: -35}
+        - {x: 35.5, y: -6}
+        - {x: 35.5, y: 6}
+        - {x: 7.5, y: 35}
+    - name: powerup_jetpack.png
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 173
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 35}
+        - {x: -35.5, y: 17}
+        - {x: -35.5, y: -8}
+        - {x: -17.5, y: -35}
+        - {x: 6.5, y: -35}
+        - {x: 35.5, y: -6}
+        - {x: 35.5, y: 6}
+        - {x: 7.5, y: 35}
+    - name: powerup_wings.png
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 686
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 35}
+        - {x: -35.5, y: 17}
+        - {x: -35.5, y: -8}
+        - {x: -17.5, y: -35}
+        - {x: 6.5, y: -35}
+        - {x: 35.5, y: -6}
+        - {x: 35.5, y: 6}
+        - {x: 7.5, y: 35}
+    - name: silver_1.png
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1558
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 42}
+        - {x: -42, y: 28}
+        - {x: -42, y: -26}
+        - {x: -24, y: -42}
+        - {x: 35, y: -42}
+        - {x: 42, y: -29}
+        - {x: 42, y: 37}
+        - {x: 34, y: 42}
+    - name: silver_2.png
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 961
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 42}
+        - {x: -25, y: 42}
+        - {x: -33, y: 34}
+        - {x: -33, y: -28}
+        - {x: -30, y: -42}
+        - {x: 32, y: -42}
+        - {x: 33, y: -37}
+        - {x: 33, y: 39}
+        - {x: 32, y: 40}
+    - name: silver_3.png
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 745
+        width: 50
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 42}
+        - {x: -25, y: 36}
+        - {x: -25, y: -30}
+        - {x: -21, y: -42}
+        - {x: 25, y: -42}
+        - {x: 25, y: 37}
+        - {x: 19, y: 42}
+    - name: silver_4.png
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1313
+        width: 14
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: smoke.png
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 636
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 24}
+        - {x: -25.5, y: 23}
+        - {x: -25.5, y: -24}
+        - {x: 19.5, y: -24}
+        - {x: 25.5, y: -21}
+        - {x: 25.5, y: 9}
+        - {x: 19.5, y: 24}
+    - name: spikeBall1.png
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1137
+        width: 142
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 74}
+        - {x: -53, y: 74}
+        - {x: -71, y: 34}
+        - {x: -71, y: -28}
+        - {x: -44, y: -65}
+        - {x: -13, y: -74}
+        - {x: 51, y: -74}
+        - {x: 61, y: -73}
+        - {x: 71, y: -41}
+        - {x: 71, y: 55}
+    - name: spikeBall_2.png
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 785
+        width: 148
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -74, y: -37.5}
+        - {x: -50, y: -70.5}
+        - {x: 38, y: -70.5}
+        - {x: 74, y: -58.5}
+        - {x: 74, y: 29.5}
+        - {x: 70, y: 63.5}
+        - {x: 50, y: 70.5}
+        - {x: -52, y: 70.5}
+        - {x: -74, y: 31.5}
+    - name: spikeMan_jump.png
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 830
+        width: 114
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: -34.5}
+        - {x: 14, y: 77.5}
+        - {x: -8, y: 77.5}
+        - {x: -57, y: -7.5}
+        - {x: -57, y: -77.5}
+        - {x: 57, y: -77.5}
+    - name: spikeMan_stand.png
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 476
+        width: 90
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 77.5}
+        - {x: -45, y: 1.5}
+        - {x: -45, y: -77.5}
+        - {x: 45, y: -77.5}
+        - {x: 45, y: 0.5}
+        - {x: 6, y: 77.5}
+    - name: spikeMan_walk1.png
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 633
+        width: 120
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 79.5}
+        - {x: -60, y: 1.5}
+        - {x: -60, y: -79.5}
+        - {x: 60, y: -79.5}
+        - {x: 60, y: -2.5}
+        - {x: 22, y: 79.5}
+    - name: spikeMan_walk2.png
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1597
+        width: 90
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 6.5}
+        - {x: -45, y: -77.5}
+        - {x: 45, y: -77.5}
+        - {x: 45, y: 0.5}
+        - {x: 13, y: 77.5}
+        - {x: -8, y: 77.5}
+        - {x: -43, y: 26.5}
+    - name: spike_bottom.png
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1755
+        width: 51
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 43.5}
+        - {x: -25.5, y: 19.5}
+        - {x: -13.5, y: -40.5}
+        - {x: -6.5, y: -43.5}
+        - {x: 6.5, y: -43.5}
+        - {x: 24.5, y: 7.5}
+        - {x: 25.5, y: 17.5}
+        - {x: 25.5, y: 43.5}
+    - name: spike_top.png
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1209
+        width: 51
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 43.5}
+        - {x: -25.5, y: -27.5}
+        - {x: -25.5, y: -43.5}
+        - {x: 25.5, y: -43.5}
+        - {x: 25.5, y: -28.5}
+        - {x: 6.5, y: 43.5}
+    - name: spikes_bottom.png
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 7
+        width: 95
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: -24.5}
+        - {x: 47.5, y: 17.5}
+        - {x: 47.5, y: 26.5}
+        - {x: -47.5, y: 26.5}
+        - {x: -47.5, y: 14.5}
+        - {x: -43.5, y: 1.5}
+        - {x: -37.5, y: -21.5}
+        - {x: -35.5, y: -26.5}
+        - {x: -24.5, y: -26.5}
+        - {x: -23.5, y: -24.5}
+        - {x: -11.5, y: -26.5}
+        - {x: 35.5, y: -26.5}
+    - name: spikes_top.png
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 605
+        width: 95
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 26.5}
+        - {x: -42.5, y: 19.5}
+        - {x: -47.5, y: -15.5}
+        - {x: -47.5, y: -26.5}
+        - {x: 47.5, y: -26.5}
+        - {x: 47.5, y: -8.5}
+        - {x: 42.5, y: 26.5}
+    - name: spring.png
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 413
+        width: 145
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -72.5, y: 38.5}
+        - {x: -72.5, y: -6.5}
+        - {x: -29.5, y: -38.5}
+        - {x: 36.5, y: -38.5}
+        - {x: 72.5, y: -9.5}
+        - {x: 72.5, y: 36.5}
+        - {x: 68.5, y: 38.5}
+    - name: springMan_hurt.png
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1047
+        width: 110
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 70.5}
+        - {x: -55, y: -47.5}
+        - {x: -34, y: -70.5}
+        - {x: 46, y: -70.5}
+        - {x: 55, y: -38.5}
+        - {x: 55, y: 65.5}
+        - {x: 54, y: 70.5}
+    - name: springMan_stand.png
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1298
+        width: 110
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 70.5}
+        - {x: -55, y: -47.5}
+        - {x: -34, y: -70.5}
+        - {x: 46, y: -70.5}
+        - {x: 55, y: -38.5}
+        - {x: 55, y: 65.5}
+        - {x: 54, y: 70.5}
+    - name: spring_in.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 145
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -72.5, y: 28.5}
+        - {x: -72.5, y: -19.5}
+        - {x: -54.5, y: -28.5}
+        - {x: 54.5, y: -28.5}
+        - {x: 72.5, y: -20.5}
+        - {x: 72.5, y: 28.5}
+    - name: spring_out.png
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 673
+        width: 145
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 53}
+        - {x: 68.5, y: 55}
+        - {x: -72.5, y: 55}
+        - {x: -72.5, y: -2}
+        - {x: -38.5, y: -55}
+        - {x: 30.5, y: -55}
+        - {x: 35.5, y: -52}
+        - {x: 47.5, y: -44}
+        - {x: 72.5, y: -11}
+    - name: sun1.png
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 987
+        width: 142
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 74}
+        - {x: -53, y: 74}
+        - {x: -71, y: 34}
+        - {x: -71, y: -28}
+        - {x: -44, y: -65}
+        - {x: -13, y: -74}
+        - {x: 51, y: -74}
+        - {x: 61, y: -73}
+        - {x: 71, y: -41}
+        - {x: 71, y: 55}
+    - name: sun2.png
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 516
+        width: 148
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: 71}
+        - {x: -46, y: 71}
+        - {x: -74, y: 30}
+        - {x: -74, y: -59}
+        - {x: -33, y: -71}
+        - {x: 45, y: -71}
+        - {x: 63, y: -45}
+        - {x: 74, y: -22}
+        - {x: 74, y: 30}
+    - name: wingMan1.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1287
+        width: 174
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82, y: 63}
+        - {x: -87, y: 51}
+        - {x: -87, y: -15}
+        - {x: -39, y: -63}
+        - {x: 71, y: -63}
+        - {x: 87, y: -40}
+        - {x: 87, y: 63}
+    - name: wingMan2.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 206
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102, y: 53.5}
+        - {x: -103, y: 52.5}
+        - {x: -103, y: 1.5}
+        - {x: -76, y: -53.5}
+        - {x: 53, y: -53.5}
+        - {x: 103, y: -22.5}
+        - {x: 103, y: 53.5}
+    - name: wingMan3.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 388
+        width: 216
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -108, y: -12.5}
+        - {x: -72, y: -50.5}
+        - {x: 48, y: -50.5}
+        - {x: 108, y: -30.5}
+        - {x: 108, y: 36.5}
+        - {x: 70, y: 50.5}
+        - {x: -78, y: 50.5}
+        - {x: -108, y: 44.5}
+    - name: wingMan4.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 216
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102, y: -45.5}
+        - {x: -93, y: -50.5}
+        - {x: 85, y: -50.5}
+        - {x: 108, y: -44.5}
+        - {x: 108, y: 22.5}
+        - {x: 87, y: 50.5}
+        - {x: -53, y: 50.5}
+        - {x: -108, y: 21.5}
+        - {x: -108, y: -34.5}
+    - name: wingMan5.png
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1415
+        width: 182
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 61.5}
+        - {x: -91, y: -21.5}
+        - {x: -91, y: -61.5}
+        - {x: 88, y: -61.5}
+        - {x: 91, y: -57.5}
+        - {x: 91, y: -18.5}
+        - {x: 31, y: 61.5}
+    - name: wing_left.png
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1323
+        width: 85
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 37}
+        - {x: -42.5, y: 31}
+        - {x: -42.5, y: -10}
+        - {x: -26.5, y: -37}
+        - {x: 28.5, y: -37}
+        - {x: 42.5, y: -28}
+        - {x: 42.5, y: -7}
+        - {x: -18.5, y: 37}
+    - name: wing_right.png
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 516
+        width: 85
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 37}
+        - {x: -42.5, y: -1}
+        - {x: -42.5, y: -26}
+        - {x: -36.5, y: -37}
+        - {x: 21.5, y: -37}
+        - {x: 42.5, y: -14}
+        - {x: 42.5, y: 33}
+        - {x: 40.5, y: 37}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
