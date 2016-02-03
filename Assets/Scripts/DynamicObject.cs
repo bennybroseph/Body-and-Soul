@@ -59,7 +59,8 @@ public class DynamicObject : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        CalculateVelocity();       
+        CalculateVelocity();
+        UpdateVelocity();
 
         Move();
     }
@@ -67,6 +68,10 @@ public class DynamicObject : MonoBehaviour
     protected virtual void CalculateVelocity()
     {
         m_TotalVelocity = m_Velocity;
+    }
+    protected virtual void UpdateVelocity()
+    {
+
     }
 
     // Used to move objects
