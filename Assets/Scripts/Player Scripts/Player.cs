@@ -4,76 +4,10 @@ using System.Collections.Generic;
 public class Player : Actor
 {
     [SerializeField]
-    protected bool m_IsActive;
-    [SerializeField]
     protected float m_HitPoints;
-
-    [SerializeField]
-    protected Vector3 m_Velocity;
-    [SerializeField]
-    protected Vector3 m_Decay;
-    [SerializeField]
-    protected Vector3 m_Speed;
-    [SerializeField]
-    protected Vector3 m_MaxSpeed;
-
-    //private Vector3 m_PrevPos;
-
-    [SerializeField]
-    protected bool m_CanJump;
-
-    public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING };
-
-    [SerializeField]
-    protected MovementStates m_MovementState = MovementStates.IDLE;
-    [SerializeField]
-    protected Animator m_Animator;
-
-    [SerializeField]
-    protected Rigidbody m_Rigidbody;
 
     protected List<Platform> m_Platforms;
     protected List<Player> m_Players;
-
-    [SerializeField]
-    protected float m_JumpTimer;
-    [SerializeField]
-    protected float m_StateTimer;
-
-    public bool IsActive
-    {
-        get
-        {
-            return m_IsActive;
-        }
-
-        set
-        {
-            m_IsActive = value;
-        }
-    }
-
-    public Vector3 Velocity
-    {
-        get
-        {
-            return m_Velocity;
-        }
-
-        set
-        {
-            m_Velocity = value;
-        }
-    }
-
-    protected virtual void Awake()
-    {
-        //Debug.Log("Awake");
-
-        m_Platforms = new List<Platform>();
-        m_Players = new List<Player>();
-        m_CanJump = false;
-    }
 
     // Use this for initialization
     protected override void Start()
@@ -81,6 +15,10 @@ public class Player : Actor
         //Debug.Log("Start");
 
         base.Start();
+
+        m_Platforms = new List<Platform>();
+        m_Players = new List<Player>();
+        m_CanJump = false;
     }
 
     protected virtual void FixedUpdate()
@@ -96,20 +34,20 @@ public class Player : Actor
                 if (Input.GetAxisRaw("Horizontal") == 1)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 }
                 if (Input.GetAxisRaw("Horizontal") == -1)
                 {
                     transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed.x * Time.deltaTime), -m_MaxSpeed.x, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 }
             }
             else if (m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
             {
                 if (m_Velocity.x > 0)
-                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay.x * Time.deltaTime), 0, m_MaxSpeed.x), m_Velocity.y, m_Velocity.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay * Time.deltaTime), 0, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 if (m_Velocity.x < 0)
-                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay.x * Time.deltaTime), -m_MaxSpeed.x, 0), m_Velocity.y, m_Velocity.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay * Time.deltaTime), -m_MaxSpeed, 0), m_Velocity.y, m_Velocity.z);
             }
 
             if (Input.GetAxisRaw("Jump") != 0 && m_CanJump)
@@ -117,14 +55,14 @@ public class Player : Actor
                 if (m_MovementState == MovementStates.JUMPING && m_JumpTimer > 0)
                 {
                     m_JumpTimer -= Time.deltaTime;
-                    m_Rigidbody.AddForce(new Vector3(0.0f, m_Speed.y, 0.0f));
+                    m_Rigidbody.AddForce(new Vector3(0.0f, m_IncrementalJumpForce, 0.0f));
                 }
                 else if (m_MovementState != MovementStates.JUMPING)
                 {
                     m_MovementState = MovementStates.JUMPING;
 
-                    m_JumpTimer = 0.25f;
-                    m_Rigidbody.AddForce(new Vector3(0.0f, m_Decay.y, 0.0f));
+                    m_JumpTimer = m_MaxJumpTime;
+                    m_Rigidbody.AddForce(new Vector3(0.0f, m_InitialJumpForce, 0.0f));
                 }
 
                 if (m_JumpTimer <= 0)
@@ -138,8 +76,7 @@ public class Player : Actor
             else if (Input.GetAxisRaw("Vertical") == 0 && m_MovementState == MovementStates.DUCK)
                 m_MovementState = MovementStates.IDLE;
 
-        }
-        Move();
+        }        
 
         if (Mathf.Abs(m_Velocity.x) <= 0.001)
         {
@@ -147,11 +84,17 @@ public class Player : Actor
                 m_MovementState = MovementStates.IDLE;
 
             m_Velocity = new Vector3(0, m_Velocity.y, m_Velocity.z);
-        }
+        }       
+    }
 
-        //m_PrevPos = transform.position;
-        //m_Rigidbody.velocity = new Vector3(0, m_Rigidbody.velocity.y, 0);
+    protected override void CalculateVelocity()
+    {
+        base.CalculateVelocity();
 
+        foreach (Platform platform in m_Platforms)
+            m_TotalVelocity += platform.Velocity;
+        foreach (Player player in m_Players)
+            m_TotalVelocity += player.TotalVelocity;
     }
 
     protected virtual void LateUpdate()
@@ -159,17 +102,6 @@ public class Player : Actor
         //print("LateUpdate");
 
         m_Animator.SetInteger("Player_State", (int)m_MovementState);
-    }
-
-    protected override void Move()
-    {
-        transform.position += m_Velocity;
-
-        //print("Number of Items: " + m_Platforms.Count.ToString());
-        foreach (Platform platform in m_Platforms)
-            transform.position += platform.Velocity;
-        foreach (Player player in m_Players)
-            transform.position += player.Velocity;
     }
 
     protected virtual void OnCollisionStay(Collision collision)

@@ -18,7 +18,7 @@ public class Game_Controller : MonoBehaviour
     [SerializeField]
     private Player m_Spirit;
     [SerializeField]
-    private Camera m_Camera;
+    private MyCamera m_Camera;
     [SerializeField]
     private GameObject SpiritMode;
     private SceneManager SceneManagement;
@@ -38,6 +38,8 @@ public class Game_Controller : MonoBehaviour
         check = true;
         gameOverText.text = "";
         restartText.text = "";
+        m_Human.IsActive = true;
+        m_Spirit.IsActive = false;
     }
 
     void FixedUpdate()
@@ -121,7 +123,7 @@ public class Game_Controller : MonoBehaviour
 
     public void ChangeSceneMode()
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Platforms");
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Platform");
         for(int i = 0; i > objects.Length; i++)
         {
             if (objects[i].GetComponent<MovingPlat>().IsHuman)

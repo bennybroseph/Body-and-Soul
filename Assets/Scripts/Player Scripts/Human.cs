@@ -12,6 +12,6 @@ public class Human : Player
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
 }
