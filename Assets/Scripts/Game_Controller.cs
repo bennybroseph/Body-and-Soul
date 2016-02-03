@@ -59,8 +59,8 @@ public class Game_Controller : MonoBehaviour
                 m_PlayerState = PlayerState.SPIRIT;
                 m_Camera.Following = m_Spirit.gameObject;
             }
-            m_Human.gameObject.GetComponent<SpriteRenderer>().enabled = !m_Human.gameObject.GetComponent<SpriteRenderer>().enabled;
-            m_Spirit.gameObject.GetComponent<SpriteRenderer>().enabled = !m_Spirit.gameObject.GetComponent<SpriteRenderer>().enabled;
+            m_Human.gameObject.SetActive(m_Human.IsActive);
+            m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
 
             ChangeSceneMode();
 
