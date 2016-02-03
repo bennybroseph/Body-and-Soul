@@ -49,12 +49,18 @@ public class Game_Controller : MonoBehaviour
             m_Human.IsActive = !m_Human.IsActive;
             m_Spirit.IsActive = !m_Spirit.IsActive;
 
-            if(m_Human.IsActive)
+            if (m_Human.IsActive)
+            {
+                m_PlayerState = PlayerState.HUMAN;
                 m_Camera.Following = m_Human.gameObject;
+            }
             else
+            {
+                m_PlayerState = PlayerState.SPIRIT;
                 m_Camera.Following = m_Spirit.gameObject;
-            //m_Human.gameObject.SetActive(m_Human.IsActive);
-            //m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
+            }
+            m_Human.gameObject.SetActive(m_Human.IsActive);
+            m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
 
             ChangeSceneMode();
 
@@ -71,16 +77,16 @@ public class Game_Controller : MonoBehaviour
         if (check)
         {
             if (m_Human.transform.position.y <= -10)
-        {
-            GameOver();
-        }
+            {
+                GameOver();
+            }
 
             if (gameOver)
-        {
-            restartText.text = "Press 'R' for Restart";
-            restart = true;
-            check = false;
-        }
+            {
+                restartText.text = "Press 'R' for Restart";
+                restart = true;
+                check = false;
+            }
         }
         if (restart)
         {
@@ -118,28 +124,17 @@ public class Game_Controller : MonoBehaviour
         else
         {
             SceneManager.LoadScene("BenScene");
-        }   
+        }
     }
 
     public void ChangeSceneMode()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Platform");
-        for(int i = 0; i > objects.Length; i++)
+        for (int i = 0; i < objects.Length; i++)
         {
-            if (objects[i].GetComponent<MovingPlat>().IsHuman)
-            {
-                objects[i].GetComponent<MovingPlat>().IsHuman = false;
-                objects[i].GetComponent<MovingPlat>().IsSpirit = true;
-                objects[i].SetActive(false);
-                SpiritMode.SetActive(true);
-            }
-            else
-            {
-                objects[i].GetComponent<MovingPlat>().IsHuman = true;
-                objects[i].GetComponent<MovingPlat>().IsSpirit = false;
-                objects[i].SetActive(true);
-                SpiritMode.SetActive(false);
-            }
+            objects[i].GetComponent<SpriteRenderer>().enabled = !objects[i].GetComponent<SpriteRenderer>().enabled;
+            objects[i].GetComponent<BoxCollider>().enabled = !objects[i].GetComponent<BoxCollider>().enabled;
         }
+        SpiritMode.SetActive(!SpiritMode.active);
     }
 }
