@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -8,19 +9,19 @@ public class Game_Controller : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private bool check;
-    private bool LevelComplete;
+    //private bool LevelComplete;
     [SerializeField]
-    private GUIText gameOverText;
+    private Text m_GameOverText;
     [SerializeField]
-    private GUIText restartText;
+    private Text m_RestartText;
     [SerializeField]
     private Player m_Human;
     [SerializeField]
     private Player m_Spirit;
     [SerializeField]
     private MyCamera m_Camera;
-    [SerializeField]
-    private GameObject SpiritMode;
+    //[SerializeField]
+    //private GameObject SpiritMode;
     private SceneManager SceneManagement;
 
     public enum PlayerState { HUMAN, SPIRIT };
@@ -32,14 +33,27 @@ public class Game_Controller : MonoBehaviour
 
     void Start()
     {
-        LevelComplete = false;
+        //LevelComplete = false;
         gameOver = false;
         restart = false;
         check = true;
-        gameOverText.text = "";
-        restartText.text = "";
+        m_GameOverText.text = "";
+        m_RestartText.text = "";
+
         m_Human.IsActive = true;
+        m_Human.GetComponent<SpriteRenderer>().enabled = true;
+
         m_Spirit.IsActive = false;
+        m_Spirit.GetComponent<SpriteRenderer>().enabled = false;
+
+        GameObject[] platform = GameObject.FindGameObjectsWithTag("Platform");
+        for (int i = 0; i < platform.Length; i++)
+        {
+            if (platform[i].GetComponent<Platform>().IsHuman)
+                platform[i].GetComponent<SpriteRenderer>().enabled = true;
+            if (platform[i].GetComponent<Platform>().IsSpirit)
+                platform[i].GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -59,12 +73,12 @@ public class Game_Controller : MonoBehaviour
                 m_PlayerState = PlayerState.SPIRIT;
                 m_Camera.Following = m_Spirit.gameObject;
             }
-            m_Human.gameObject.SetActive(m_Human.IsActive);
-            m_Spirit.gameObject.SetActive(m_Spirit.IsActive);
+            m_Human.GetComponent<SpriteRenderer>().enabled = !m_Human.GetComponent<SpriteRenderer>().enabled;
+            m_Spirit.GetComponent<SpriteRenderer>().enabled = !m_Spirit.GetComponent<SpriteRenderer>().enabled;
 
             ChangeSceneMode();
 
-            m_StateTimer = 1;
+            m_StateTimer = 0.5f;
         }
         else if (m_StateTimer > 0)
         {
@@ -83,7 +97,7 @@ public class Game_Controller : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
+                m_RestartText.text = "Press 'R' for Restart";
                 restart = true;
                 check = false;
             }
@@ -105,15 +119,15 @@ public class Game_Controller : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.text = "Game Over!";
+        m_GameOverText.text = "Game Over!";
         gameOver = true;
         m_Human.GetComponent<Rigidbody>().freezeRotation = false;
-        m_Human.GetComponent<Rigidbody>().AddTorque(100, 0, 500);
+        m_Human.GetComponent<Rigidbody>().AddTorque(25, 0, 0);
     }
 
     public IEnumerator YouWin()
     {
-        gameOverText.text = "You Win!";
+        m_GameOverText.text = "You Win!";
         restart = true;
         gameOver = true;
         yield return new WaitForSeconds(3f);
@@ -131,10 +145,6 @@ public class Game_Controller : MonoBehaviour
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Platform");
         for (int i = 0; i < objects.Length; i++)
-        {
             objects[i].GetComponent<SpriteRenderer>().enabled = !objects[i].GetComponent<SpriteRenderer>().enabled;
-            objects[i].GetComponent<BoxCollider>().enabled = !objects[i].GetComponent<BoxCollider>().enabled;
-        }
-        SpiritMode.SetActive(!SpiritMode.active);
     }
 }
