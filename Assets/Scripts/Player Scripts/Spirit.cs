@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Spirit : Player
 {
-    [SerializeField]
+    [ReadOnly, SerializeField]
     private bool m_CanHover;
-    [SerializeField]
+    [ReadOnly, SerializeField]
     private Vector3 m_HoverPos;
 
     // Use this for initialization

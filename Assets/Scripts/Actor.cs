@@ -6,7 +6,7 @@ public class Actor : DynamicObject
 {
     public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING };
 
-    [SerializeField]
+    [ReadOnly, SerializeField]
     protected MovementStates m_MovementState;
 
     [Header("Horizontal Movement")]
@@ -26,11 +26,11 @@ public class Actor : DynamicObject
     protected float m_MaxJumpTime;
 
     [Space]
-    [SerializeField, Tooltip("Whether the actor can jump or not")]
+    [ReadOnly, SerializeField, Tooltip("Whether the actor can jump or not")]
     protected bool m_CanJump;
 
     [Space]
-    [SerializeField]
+    [ReadOnly, SerializeField]
     protected float m_JumpTimer;
 
     [Header("Objects")]

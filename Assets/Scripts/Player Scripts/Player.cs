@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Player : Actor
 {
-    [SerializeField]
+    [ReadOnly, SerializeField]
     protected float m_HitPoints;
     
     protected List<DynamicObject> m_DynamicObjects;
@@ -170,5 +170,11 @@ public class Player : Actor
         {
             m_DynamicObjects.Remove(collision.gameObject.GetComponent<DynamicObject>());
         }
+    }
+
+    protected virtual void OnValidate()
+    {
+        if (m_Decay < 0)
+            m_Decay = 0;
     }
 }
