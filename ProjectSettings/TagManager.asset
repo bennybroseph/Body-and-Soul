@@ -39,12 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Front
+  - name: SpiritShadow
     uniqueID: 125471275
+    locked: 0
+  - name: Spirit
+    uniqueID: 163531239
+    locked: 0
+  - name: HumanShadow
+    uniqueID: 1643357949
+    locked: 0
+  - name: Human
+    uniqueID: 3565142541
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Back
-    uniqueID: 1643357949
     locked: 0
