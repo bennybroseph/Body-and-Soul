@@ -8,8 +8,13 @@ public class Actor : DynamicObject
 
     [ReadOnly, SerializeField]
     protected MovementStates m_MovementState;
+    [ReadOnly, SerializeField, Tooltip("Whether the actor can jump or not")]
+    protected bool m_CanJump;
+    [ReadOnly, SerializeField, Tooltip("Whether the jump height can still be affected by stimuli")]
+    protected bool m_CanAffectJump;
+    [ReadOnly, SerializeField]
+    protected float m_JumpTimer;
 
-    [Header("Horizontal Movement")]
     [SerializeField, Tooltip("How much speed is lost when sliding on the ground")]
     protected float m_Decay;
     [SerializeField, Tooltip("How much speed is gained while holding a Horizontal key")]
@@ -17,23 +22,13 @@ public class Actor : DynamicObject
     [SerializeField, Tooltip("The maximum horizontal speed")]
     protected float m_MaxSpeed;
 
-    [Header("Vertical Movement")]
     [SerializeField, Tooltip("Amount of force to add while holding the jump key")]
     protected float m_IncrementalJumpForce;
     [SerializeField, Tooltip("Amount of force to add the first time the jump key is pressed")]
     protected float m_InitialJumpForce;
     [SerializeField, Tooltip("Amount of time to allow the control of jump height")]
     protected float m_MaxJumpTime;
-
-    [Space]
-    [ReadOnly, SerializeField, Tooltip("Whether the actor can jump or not")]
-    protected bool m_CanJump;
-
-    [Space]
-    [ReadOnly, SerializeField]
-    protected float m_JumpTimer;
-
-    [Header("Objects")]
+    
     [SerializeField]
     protected Animator m_Animator;
     [SerializeField]

@@ -18,7 +18,7 @@ public class ReadOnlyDrawer : PropertyDrawer
         Color color = GUI.color;
 
         GUI.enabled = false;
-        GUI.color = new Color(1, 1, 0);
+        GUI.color = new Color(0.8f, 0.8f, 1.0f);
         EditorGUI.PropertyField(position, property, label, true);
         GUI.color = color;
         GUI.enabled = true;

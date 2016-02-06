@@ -4,14 +4,21 @@ using System.Collections;
 // This class is used as a base for all objects in the game which have a script i.e. not a static object
 public class DynamicObject : MonoBehaviour
 {
-    [SerializeField, Tooltip("Whether an object is active or not")]
+    [Header("Watcher Variables")]
+    [ReadOnly, SerializeField, Tooltip("Whether an object is active or not")]
+    /// <summary>
+    /// An object's active state
+    /// </summary>
     protected bool m_IsActive = false;  // By default an object will be inactive to ensure explicit activation
 
-    [SerializeField, Tooltip("The object's personal velocity without outside forces")]
+    [ReadOnly, SerializeField, Tooltip("The object's personal velocity without outside forces")]
     protected Vector3 m_Velocity;
-    [SerializeField, Tooltip("The total velocity of an object after adding outside forces")]
+    [ReadOnly, SerializeField, Tooltip("The total velocity of an object after adding outside forces")]
     protected Vector3 m_TotalVelocity;
 
+    /// <summary>
+    /// Get or set an object's active state
+    /// </summary>
     public virtual bool IsActive
     {
         get
@@ -23,8 +30,11 @@ public class DynamicObject : MonoBehaviour
         {
             m_IsActive = value;
         }
-    }           // Get or set an object's active state
+    }
 
+    /// <summary>
+    /// Get or set an object's velocity
+    /// </summary>
     public virtual Vector3 Velocity
     {
         get
@@ -35,7 +45,10 @@ public class DynamicObject : MonoBehaviour
         {
             m_Velocity = value;
         }
-    }        // Get or set an object's velocity
+    }
+    /// <summary>
+    /// Get or set an object's total velocity
+    /// </summary>
     public virtual Vector3 TotalVelocity
     {
         get
@@ -46,7 +59,7 @@ public class DynamicObject : MonoBehaviour
         {
             m_TotalVelocity = value;
         }
-    }   // Get or set an object's total velocity
+    }
 
     // Use this for initialization
     protected virtual void Start()

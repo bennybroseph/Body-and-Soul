@@ -134,17 +134,20 @@ MonoBehaviour:
   m_Velocity: {x: 0, y: 0, z: 0}
   m_TotalVelocity: {x: 0, y: 0, z: 0}
   m_MovementState: 0
-  m_Decay: 0.25
+  m_CanJump: 0
+  m_CanAffectJump: 0
+  m_JumpTimer: 0
+  m_Decay: 0.125
   m_Speed: 0.125
   m_MaxSpeed: 0.1
   m_IncrementalJumpForce: 10
   m_InitialJumpForce: 150
   m_MaxJumpTime: 0.25
-  m_CanJump: 0
-  m_JumpTimer: 0
   m_Animator: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HitPoints: 0
+  m_CurrentlyTouching: []
+  m_DynamicObjects: []
 --- !u!212 &21271810
 SpriteRenderer:
   m_ObjectHideFlags: 1
