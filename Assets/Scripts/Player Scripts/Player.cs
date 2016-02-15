@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 public class Player : Actor
 {
-    [SerializeField]
+    [ReadOnly, SerializeField]
     protected float m_HitPoints;
-    
+
+    [ReadOnly, SerializeField]
+    protected List<GameObject> m_CurrentlyTouching;
+    [ReadOnly, SerializeField]
     protected List<DynamicObject> m_DynamicObjects;
 
     // Use this for initialization
@@ -17,11 +20,21 @@ public class Player : Actor
 
         m_DynamicObjects = new List<DynamicObject>();
         m_CanJump = false;
+
+        m_CurrentlyTouching = new List<GameObject>();
     }
 
     protected override void CalculateVelocity()
     {
         base.CalculateVelocity();
+
+        if (m_CurrentlyTouching.Count == 0)
+            m_CanJump = false;
+        else if (Input.GetAxisRaw("Jump") == 0)
+        {
+            m_CanJump = true;
+            //m_CanAffectJump = true;
+        }
 
         if (m_IsActive)
         {
@@ -57,13 +70,22 @@ public class Player : Actor
             {
                 Jump();
 
-                if (m_JumpTimer <= 0)
-                    m_CanJump = false;
+                //if (m_JumpTimer <= 0)
+                //    m_CanJump = false;
             }
-            else if (m_MovementState == MovementStates.JUMPING && m_CanJump)
+            else if (m_MovementState == MovementStates.JUMPING)
+            {
                 m_CanJump = false;
+                m_CanAffectJump = false;
+
+                m_MaxJumpTime -= m_IncrementalJumpForce * Time.deltaTime;
+                m_MaxJumpTime = Mathf.Clamp(m_MaxJumpTime, 0, m_MaxJumpTime);
+            }
             else
                 EndJump();
+
+            m_Rigidbody.AddForce(new Vector3(0.0f, m_MaxJumpTime * Time.deltaTime, 0.0f));
+
 
             //////////////////////////////////////
             //          /Jump Code              //
@@ -75,11 +97,11 @@ public class Player : Actor
                 m_MovementState = MovementStates.IDLE;
         }
 
-        if (Input.GetAxisRaw("Horizontal") == 0 && m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
+        if (m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
         {
-            if (m_Velocity.x > 0)
+            if ((Input.GetAxisRaw("Horizontal") < 0 || Input.GetAxisRaw("Horizontal") == 0) && m_Velocity.x > 0)
                 m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay * Time.deltaTime), 0, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
-            if (m_Velocity.x < 0)
+            if ((Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Horizontal") == 0) && m_Velocity.x < 0)
                 m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay * Time.deltaTime), -m_MaxSpeed, 0), m_Velocity.y, m_Velocity.z);
         }
         if (Mathf.Abs(m_Velocity.x) <= 0.001)
@@ -92,21 +114,34 @@ public class Player : Actor
     }
     protected virtual void Jump()
     {
+
         if (m_CanJump)
         {
-            if (m_MovementState == MovementStates.JUMPING && m_JumpTimer > 0)
-            {
-                m_Rigidbody.AddForce(new Vector3(0.0f, m_IncrementalJumpForce, 0.0f));
+            m_MaxJumpTime = m_InitialJumpForce;
 
-                m_JumpTimer -= Time.deltaTime;
-            }
-            else if (m_MovementState != MovementStates.JUMPING)
-            {
-                m_MovementState = MovementStates.JUMPING;
-                m_Rigidbody.AddForce(new Vector3(0.0f, m_InitialJumpForce, 0.0f));
+            m_MovementState = MovementStates.JUMPING;
 
-                m_JumpTimer = m_MaxJumpTime;
-            }
+            m_CanAffectJump = true;
+            //if (m_MovementState == MovementStates.JUMPING && m_JumpTimer > 0)
+            //{
+            //    m_Rigidbody.AddForce(new Vector3(0.0f, m_IncrementalJumpForce, 0.0f));
+
+            //    m_JumpTimer -= Time.deltaTime;
+            //}
+            //else if (m_MovementState != MovementStates.JUMPING)
+            //{
+            //    m_MovementState = MovementStates.JUMPING;
+            //    m_Rigidbody.AddForce(new Vector3(0.0f, m_InitialJumpForce, 0.0f));
+
+            //    m_JumpTimer = m_MaxJumpTime;
+            //}
+        }
+        if (m_MaxJumpTime <= 0)
+            m_CanAffectJump = false;
+        if (m_CanAffectJump)
+        {
+            m_MaxJumpTime -= m_IncrementalJumpForce / 2 * Time.deltaTime;
+            m_MaxJumpTime = Mathf.Clamp(m_MaxJumpTime, 0, m_MaxJumpTime);
         }
     }
     protected virtual void EndJump()
@@ -128,6 +163,8 @@ public class Player : Actor
 
         if (m_MovementState != MovementStates.LANDING)
             m_Animator.SetInteger("Player_State", (int)m_MovementState);
+        if (m_MovementState == MovementStates.WALKING)
+            m_Animator.speed = Mathf.Abs(m_Velocity.x) * 10 + 0.8f;
     }
 
     protected virtual void OnCollisionStay(Collision collision)
@@ -136,29 +173,39 @@ public class Player : Actor
 
         foreach (ContactPoint contact in collision.contacts)
         {
-            if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
-            {
-                m_CanJump = true;
+            //if (contact.normal != new Vector3(0.0f, -1.0f, 0.0f))
+            //{
+            //    if (Input.GetAxisRaw("Jump") == 0)
+            //    {
+            //        m_CanJump = true;
+            //        //m_CanAffectJump = true;
+            //    }
 
-                if (m_MovementState == MovementStates.JUMPING)
-                    m_MovementState = MovementStates.LANDING;
-            }
-            else if ((contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && m_Velocity.x > 0) || (contact.normal == new Vector3(1.0f, 0.0f, 0.0f) && m_Velocity.x < 0))
+            //    if (m_MovementState == MovementStates.JUMPING)
+            //        m_MovementState = MovementStates.LANDING;
+            //}
+            if ((contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && m_Velocity.x > 0) || (contact.normal == new Vector3(1.0f, 0.0f, 0.0f) && m_Velocity.x < 0))
                 m_Velocity = new Vector3(0, m_Velocity.y, 0);
         }
     }
     protected virtual void OnCollisionEnter(Collision collision)
     {
         //print("OnCollisionEnter");
-
-        if (collision.gameObject.GetComponent<DynamicObject>())
+        foreach (ContactPoint contact in collision.contacts)
         {
-            foreach (ContactPoint contact in collision.contacts)
+            if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && collision.gameObject.GetComponent<DynamicObject>() && !m_DynamicObjects.Exists(x => x == collision.gameObject.GetComponent<DynamicObject>()))
+                m_DynamicObjects.Add(collision.gameObject.GetComponent<DynamicObject>());
+            if (contact.normal != new Vector3(0.0f, -1.0f, 0.0f) && !m_CurrentlyTouching.Exists(x => x == collision.gameObject))
             {
-                if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && !m_DynamicObjects.Exists(x => x == collision.gameObject.GetComponent<DynamicObject>()))
+                if (Input.GetAxisRaw("Jump") == 0)
                 {
-                    m_DynamicObjects.Add(collision.gameObject.GetComponent<DynamicObject>());
+                    m_CanJump = true;
+                    //m_CanAffectJump = true;
                 }
+
+                if (m_MovementState == MovementStates.JUMPING)
+                    m_MovementState = MovementStates.LANDING;
+                m_CurrentlyTouching.Add(collision.gameObject);
             }
         }
     }
@@ -167,8 +214,15 @@ public class Player : Actor
         //print("OnCollisionExit");
 
         if (collision.gameObject.GetComponent<DynamicObject>())
-        {
             m_DynamicObjects.Remove(collision.gameObject.GetComponent<DynamicObject>());
-        }
+
+        if (m_CurrentlyTouching.Exists(x => x == collision.gameObject))
+            m_CurrentlyTouching.Remove(collision.gameObject);
+    }
+
+    protected virtual void OnValidate()
+    {
+        if (m_Decay < 0)
+            m_Decay = 0;
     }
 }
