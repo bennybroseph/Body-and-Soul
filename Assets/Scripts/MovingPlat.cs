@@ -5,15 +5,15 @@ public class MovingPlat : Platform
 {
 
     [SerializeField]
-    private string Function;
+    protected string m_Direction;
     [SerializeField]
-    private bool m_Reverse = false;
+    protected bool m_Reverse = false;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         m_Velocity = new Vector3(0, 0, 0);
-        switch (Function)
+        switch (m_Direction)
         {
             case "right":
                 if (!m_Reverse)
