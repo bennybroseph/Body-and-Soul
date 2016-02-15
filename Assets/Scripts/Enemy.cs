@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : Actor {
 
-	// Use this for initialization
-	void Start ()
+    [SerializeField]
+    protected GameObject Fire;
+    protected Object clone1;
+    protected Object clone2;
+    protected Object clone3;
+
+    protected override void Start ()
     {
-	
+        base.Start();
+
 	}
 	
-	// Update is called once per frame
-	void Update ()
+	protected override void Update ()
     {
-	
-	}
+        base.Update();
+        clone1 = Instantiate(Fire, new Vector3(), Quaternion.identity);
+        clone2 = Instantiate(Fire, new Vector3(), Quaternion.identity);
+        clone3 = Instantiate(Fire, new Vector3(), Quaternion.identity);
+    }
 }

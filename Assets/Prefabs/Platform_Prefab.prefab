@@ -86,7 +86,7 @@ MonoBehaviour:
   m_IsActive: 0
   m_Velocity: {x: 0, y: 0, z: 0}
   m_TotalVelocity: {x: 0, y: 0, z: 0}
-  m_IsHuman: 1
+  m_IsHuman: 0
   isSpirit: 0
   m_Time: 0
   m_Distance: {x: 0, y: 0, z: 0}
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -729824755
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300096, guid: d43bd46c0321cf642963134c2dc1d07e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1643357949
+  m_SortingLayerID: 125471275
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,7 +179,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Name
-      value: HumanPlatform_Prefab
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
@@ -192,18 +192,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_GameObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsHuman
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SortingLayerID
-      value: -729824755
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
