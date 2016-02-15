@@ -9,7 +9,7 @@ public class Game_Controller : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private bool check;
-    //private bool LevelComplete;
+    private bool LevelComplete;
     [SerializeField]
     private Text m_GameOverText;
     [SerializeField]
@@ -20,8 +20,8 @@ public class Game_Controller : MonoBehaviour
     private Player m_Spirit;
     [SerializeField]
     private MyCamera m_Camera;
-    //[SerializeField]
-    //private GameObject SpiritMode;
+    [SerializeField]
+    private GameObject SpiritMode;
     private SceneManager SceneManagement;
 
     public enum PlayerState { HUMAN, SPIRIT };
@@ -33,7 +33,7 @@ public class Game_Controller : MonoBehaviour
 
     void Start()
     {
-        //LevelComplete = false;
+        LevelComplete = false;
         gameOver = false;
         restart = false;
         check = true;
@@ -146,6 +146,9 @@ public class Game_Controller : MonoBehaviour
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Platform");
         for (int i = 0; i < objects.Length; i++)
+        {
             objects[i].GetComponent<SpriteRenderer>().enabled = !objects[i].GetComponent<SpriteRenderer>().enabled;
+        }
+        SpiritMode.SetActive(!SpiritMode.active);
     }
 }
