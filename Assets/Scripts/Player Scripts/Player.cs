@@ -28,87 +28,83 @@ public class Player : Actor
     {
         base.CalculateVelocity();
 
-        if (m_CurrentlyTouching.Count == 0)
-            m_CanJump = false;
-        else if (Input.GetAxisRaw("Jump") == 0)
-        {
-            m_MaxJumpTime = 0;
-            m_CanJump = true;
-            //m_CanAffectJump = true;
-        }
+        //if (m_CurrentlyTouching.Count == 0)
+        //    m_CanJump = false;
+        //else if (Input.GetAxisRaw("Jump") == 0)
+        //{
+        //    //m_MaxJumpTime = 0;
+        //    m_CanJump = true;
+        //    //m_CanAffectJump = true;
+        //}
 
         if (m_IsActive)
         {
-            base.CalculateVelocity();
-
-            if (m_IsActive)
+            if (Input.GetAxisRaw("Horizontal") != 0)
             {
-                if (Input.GetAxisRaw("Horizontal") != 0)
+                if (m_MovementState != MovementStates.JUMPING)
+                    m_MovementState = MovementStates.WALKING;
+
+                if (Input.GetAxisRaw("Horizontal") == 1)
                 {
-                    if (m_MovementState != MovementStates.JUMPING)
-                        m_MovementState = MovementStates.WALKING;
-
-                    if (Input.GetAxisRaw("Horizontal") == 1)
-                    {
-                        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                        m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
-                    }
-                    if (Input.GetAxisRaw("Horizontal") == -1)
-                    {
-                        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                        m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
-                    }
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 }
-                else if (m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
+                if (Input.GetAxisRaw("Horizontal") == -1)
                 {
-                    if (m_Velocity.x > 0)
-                        m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay * Time.deltaTime), 0, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
-                    if (m_Velocity.x < 0)
-                        m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay * Time.deltaTime), -m_MaxSpeed, 0), m_Velocity.y, m_Velocity.z);
+                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Speed * Time.deltaTime), -m_MaxSpeed, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 }
-
-                //////////////////////////////////////
-                //          Jump Code               //
-                //////////////////////////////////////
-
-                if (Input.GetAxisRaw("Jump") != 0)
-                {
-                    Jump();
-
-                    if (m_JumpTimer <= 0)
-                        m_CanJump = false;
-                }
-                else if (m_MovementState == MovementStates.JUMPING && m_CanJump)
-                    m_CanJump = false;
-                else
-                    EndJump();
-
-                //////////////////////////////////////
-                //          /Jump Code              //
-                //////////////////////////////////////
-
-                if (Input.GetAxisRaw("Vertical") < 0 && m_MovementState == MovementStates.IDLE)
-                    m_MovementState = MovementStates.DUCK;
-                else if (Input.GetAxisRaw("Vertical") == 0 && m_MovementState == MovementStates.DUCK)
-                    m_MovementState = MovementStates.IDLE;
             }
-
-            if (Input.GetAxisRaw("Horizontal") == 0 && m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
+            else if (m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
             {
                 if (m_Velocity.x > 0)
                     m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay * Time.deltaTime), 0, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
                 if (m_Velocity.x < 0)
                     m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay * Time.deltaTime), -m_MaxSpeed, 0), m_Velocity.y, m_Velocity.z);
             }
-            if (Mathf.Abs(m_Velocity.x) <= 0.001)
-            {
-                if (Input.GetAxisRaw("Horizontal") == 0 && (m_MovementState == MovementStates.LANDING || m_MovementState == MovementStates.WALKING))
-                    m_MovementState = MovementStates.IDLE;
 
-                m_Velocity = new Vector3(0, m_Velocity.y, m_Velocity.z);
+            //////////////////////////////////////
+            //          Jump Code               //
+            //////////////////////////////////////
+
+            if (Input.GetAxisRaw("Jump") != 0)
+            {
+                Jump();
+
+                if (m_JumpTimer <= 0)
+                    m_CanJump = false;
             }
+            else if (m_MovementState == MovementStates.JUMPING && m_CanJump)
+                m_CanJump = false;
+            else
+                EndJump();
+
+            //////////////////////////////////////
+            //          /Jump Code              //
+            //////////////////////////////////////
+
+            if (Input.GetAxisRaw("Vertical") < 0 && m_MovementState == MovementStates.IDLE)
+                m_MovementState = MovementStates.DUCK;
+            else if (Input.GetAxisRaw("Vertical") == 0 && m_MovementState == MovementStates.DUCK)
+                m_MovementState = MovementStates.IDLE;
+        }
+
+        if (Input.GetAxisRaw("Horizontal") == 0 && m_MovementState != MovementStates.JUMPING && m_Velocity.x != 0)
+        {
+            if (m_Velocity.x > 0)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x - (m_Decay * Time.deltaTime), 0, m_MaxSpeed), m_Velocity.y, m_Velocity.z);
+            if (m_Velocity.x < 0)
+                m_Velocity = new Vector3(Mathf.Clamp(m_Velocity.x + (m_Decay * Time.deltaTime), -m_MaxSpeed, 0), m_Velocity.y, m_Velocity.z);
+        }
+        if (Mathf.Abs(m_Velocity.x) <= 0.001)
+        {
+            if (Input.GetAxisRaw("Horizontal") == 0 && (m_MovementState == MovementStates.LANDING || m_MovementState == MovementStates.WALKING))
+                m_MovementState = MovementStates.IDLE;
+
+            m_Velocity = new Vector3(0, m_Velocity.y, m_Velocity.z);
         }
     }
+
     protected virtual void Jump()
     {
         if (m_CanJump)
@@ -157,17 +153,17 @@ public class Player : Actor
 
         foreach (ContactPoint contact in collision.contacts)
         {
-            //if (contact.normal != new Vector3(0.0f, -1.0f, 0.0f))
-            //{
-            //    if (Input.GetAxisRaw("Jump") == 0)
-            //    {
-            //        m_CanJump = true;
-            //        //m_CanAffectJump = true;
-            //    }
+            if (contact.normal != new Vector3(0.0f, -1.0f, 0.0f))
+            {
+                if (Input.GetAxisRaw("Jump") == 0)
+                {
+                    m_CanJump = true;
+                    //m_CanAffectJump = true;
+                }
 
-            //    if (m_MovementState == MovementStates.JUMPING)
-            //        m_MovementState = MovementStates.LANDING;
-            //}
+                if (m_MovementState == MovementStates.JUMPING)
+                    m_MovementState = MovementStates.LANDING;
+            }
             if ((contact.normal == new Vector3(-1.0f, 0.0f, 0.0f) && m_Velocity.x > 0) || (contact.normal == new Vector3(1.0f, 0.0f, 0.0f) && m_Velocity.x < 0))
             {
                 m_Rigidbody.position -= m_Velocity;

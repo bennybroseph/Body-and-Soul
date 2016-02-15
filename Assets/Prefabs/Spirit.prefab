@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Speed: 0.125
   m_MaxSpeed: 0.1
   m_IncrementalJumpForce: 15
-  m_InitialJumpForce: 150
+  m_InitialJumpForce: 100
   m_MaxJumpTime: 0.3
   m_Animator: {fileID: 0}
   m_Rigidbody: {fileID: 0}
