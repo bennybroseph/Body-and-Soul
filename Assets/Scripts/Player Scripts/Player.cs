@@ -124,7 +124,7 @@ public class Player : Actor
 
     protected virtual void LateUpdate()
     {
-        print("LateUpdate");
+        //print("LateUpdate");
 
         if (m_MovementState != MovementStates.LANDING)
             m_Animator.SetInteger("Player_State", (int)m_MovementState);
