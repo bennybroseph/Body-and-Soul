@@ -85,16 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!95 &34971487 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9566966, guid: 5f3e5e157515a4d47a6452305636c953,
-    type: 2}
-  m_PrefabInternal: {fileID: 252687895}
---- !u!54 &34971488 stripped
-Rigidbody:
-  m_PrefabParentObject: {fileID: 5404490, guid: 5f3e5e157515a4d47a6452305636c953,
-    type: 2}
-  m_PrefabInternal: {fileID: 252687895}
 --- !u!1001 &252687895
 Prefab:
   m_ObjectHideFlags: 0
@@ -132,35 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475452, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
       propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 152666, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442344, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_Animator
-      value: 
-      objectReference: {fileID: 34971487}
-    - target: {fileID: 11442344, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_Rigidbody
-      value: 
-      objectReference: {fileID: 34971488}
-    - target: {fileID: 21267550, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442344, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_IncrementalJumpForce
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442344, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_InitialJumpForce
-      value: 450
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442344, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
-      propertyPath: m_MaxJumpTime
-      value: 0.5
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f3e5e157515a4d47a6452305636c953, type: 2}
@@ -203,30 +165,6 @@ Prefab:
     - target: {fileID: 454036, guid: 4319e0af778d710478668494488623b7, type: 2}
       propertyPath: m_RootOrder
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 454036, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454036, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11440476, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_Animator
-      value: 
-      objectReference: {fileID: 2132116877}
-    - target: {fileID: 11440476, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_Rigidbody
-      value: 
-      objectReference: {fileID: 2132116879}
-    - target: {fileID: 11440476, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_IncrementalJumpForce
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 11440476, guid: 4319e0af778d710478668494488623b7, type: 2}
-      propertyPath: m_InitialJumpForce
-      value: 450
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4319e0af778d710478668494488623b7, type: 2}
@@ -584,6 +522,10 @@ Prefab:
       propertyPath: Function
       value: right
       objectReference: {fileID: 0}
+    - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
+      propertyPath: m_Direction
+      value: right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
   m_IsPrefabParent: 0
@@ -719,6 +661,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
       propertyPath: Function
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
+      propertyPath: m_Direction
       value: right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -922,6 +868,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
       propertyPath: Function
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
+      propertyPath: m_Direction
       value: right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1543,6 +1493,10 @@ Prefab:
       propertyPath: Function
       value: right
       objectReference: {fileID: 0}
+    - target: {fileID: 11486448, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
+      propertyPath: m_Direction
+      value: right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d183a05b6dfb5f46832c76637cf2466, type: 2}
   m_IsPrefabParent: 0
@@ -1689,16 +1643,6 @@ MonoBehaviour:
 --- !u!1 &2132116876 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 122202, guid: 4319e0af778d710478668494488623b7, type: 2}
-  m_PrefabInternal: {fileID: 352267816}
---- !u!95 &2132116877 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9516896, guid: 4319e0af778d710478668494488623b7,
-    type: 2}
-  m_PrefabInternal: {fileID: 352267816}
---- !u!54 &2132116879 stripped
-Rigidbody:
-  m_PrefabParentObject: {fileID: 5451374, guid: 4319e0af778d710478668494488623b7,
-    type: 2}
   m_PrefabInternal: {fileID: 352267816}
 --- !u!114 &2132116881 stripped
 MonoBehaviour:
