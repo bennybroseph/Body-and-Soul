@@ -97,6 +97,7 @@ public class Game_Controller : MonoBehaviour
 
             if (gameOver)
             {
+                m_Human.MovementState = Actor.MovementStates.DEAD;
                 m_RestartText.text = "Press 'R' for Restart";
                 restart = true;
                 check = false;

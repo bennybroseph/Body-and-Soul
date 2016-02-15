@@ -4,7 +4,7 @@ using System.Collections;
 // This class is used as a base for anything that reacts to stimuli such as the player character or enemies
 public class Actor : DynamicObject
 {
-    public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING };
+    public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING, DEAD };
 
     [ReadOnly, SerializeField]
     protected MovementStates m_MovementState;
@@ -33,6 +33,8 @@ public class Actor : DynamicObject
     protected Animator m_Animator;
     [SerializeField]
     protected Rigidbody m_Rigidbody;
+
+    public MovementStates MovementState { get { return m_MovementState; } set { m_MovementState = value; } }
 
     protected override void Start()
     {
