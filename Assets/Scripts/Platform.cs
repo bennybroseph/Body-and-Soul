@@ -6,7 +6,7 @@ public class Platform : DynamicObject {
     [SerializeField]
     private bool m_IsHuman;
     [SerializeField]
-    private bool isSpirit;
+    private bool m_IsSpirit;
     [SerializeField]
     protected float m_Time;
     [SerializeField]
@@ -16,27 +16,13 @@ public class Platform : DynamicObject {
 
     public bool IsHuman
     {
-        get
-        {
-            return m_IsHuman;
-        }
-
-        set
-        {
-            m_IsHuman = value;
-        }
+        get{return m_IsHuman; }
+        set{ m_IsHuman = value;}
     }
     public bool IsSpirit
     {
-        get
-        {
-            return isSpirit;
-        }
-
-        set
-        {
-            isSpirit = value;
-        }
+        get{ return m_IsSpirit;}
+        set{m_IsSpirit = value;}
     }
 
    protected override void Start()

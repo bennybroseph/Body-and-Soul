@@ -21,15 +21,8 @@ public class DynamicObject : MonoBehaviour
     /// </summary>
     public virtual bool IsActive
     {
-        get
-        {
-            return m_IsActive;
-        }
-
-        set
-        {
-            m_IsActive = value;
-        }
+        get { return m_IsActive; }
+        set { m_IsActive = value; }
     }
 
     /// <summary>
@@ -37,36 +30,24 @@ public class DynamicObject : MonoBehaviour
     /// </summary>
     public virtual Vector3 Velocity
     {
-        get
-        {
-            return m_Velocity;
-        }
-        set
-        {
-            m_Velocity = value;
-        }
+        get { return m_Velocity; }
+        set { m_Velocity = value; }
     }
     /// <summary>
     /// Get or set an object's total velocity
     /// </summary>
     public virtual Vector3 TotalVelocity
     {
-        get
-        {
-            return m_TotalVelocity;
-        }
-        set
-        {
-            m_TotalVelocity = value;
-        }
+        get { return m_TotalVelocity; }
+        set { m_TotalVelocity = value; }
     }
 
     // Use this for initialization
     protected virtual void Start()
     {
         m_Velocity = new Vector3(0.0f, 0.0f, 0.0f);
-
-        m_TotalVelocity = m_Velocity;        
+        
+        m_TotalVelocity = m_Velocity;
     }
 
     // Update is called once per frame
