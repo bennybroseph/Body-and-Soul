@@ -92,7 +92,7 @@ public class Game_Controller : MonoBehaviour
     {
         if (check)
         {
-            if (m_Human.transform.position.y <= -10)
+            if (m_Human.transform.position.y <= -1.5)
             {
                 GameOver();
             }
@@ -125,6 +125,11 @@ public class Game_Controller : MonoBehaviour
         m_GameOverText.text = "Game Over!";
         gameOver = true;
         m_Human.GetComponent<Rigidbody>().freezeRotation = false;
+        m_Human.GetComponent<BoxCollider>().enabled = false;
+
+        m_Human.IsActive = false;
+        m_Human.Velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        m_Human.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 10.0f, 0.0f);
         m_Human.GetComponent<Rigidbody>().AddTorque(25, 0, 0);
     }
 

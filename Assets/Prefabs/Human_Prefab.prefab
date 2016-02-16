@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Offset: {x: 0.15, y: -0.1, z: 0}
-  m_GameObject: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
 --- !u!114 &11440476
 MonoBehaviour:
@@ -142,8 +141,8 @@ MonoBehaviour:
   m_Speed: 0.125
   m_MaxSpeed: 0.1
   m_IncrementalJumpForce: 15
-  m_InitialJumpForce: 150
-  m_MaxJumpTime: 0.3
+  m_InitialJumpForce: 125
+  m_MaxJumpTime: 0.25
   m_Animator: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HitPoints: 0
