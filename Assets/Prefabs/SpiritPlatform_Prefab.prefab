@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11492764}
   m_Layer: 0
   m_Name: SpiritPlatform_Prefab
-  m_TagString: Platform
+  m_TagString: Spirit Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Offset: {x: 0.15, y: -0.1, z: 0}
-  m_GameObject: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
 --- !u!114 &11492764
 MonoBehaviour:
@@ -101,10 +100,10 @@ MonoBehaviour:
   m_Velocity: {x: 0, y: 0, z: 0}
   m_TotalVelocity: {x: 0, y: 0, z: 0}
   m_IsHuman: 0
-  isSpirit: 0
+  isSpirit: 1
   m_Time: 0
   m_Distance: {x: 0, y: 0, z: 0}
-  Function: 
+  m_Direction: 
   m_Reverse: 0
 --- !u!212 &21213422
 SpriteRenderer:
@@ -176,6 +175,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: SpiritPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isSpirit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Spirit Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

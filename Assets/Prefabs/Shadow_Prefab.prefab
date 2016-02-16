@@ -41,7 +41,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Offset: {x: 0.15, y: -0.1, z: 0}
-  m_GameObject: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
 --- !u!212 &21293320
 SpriteRenderer:

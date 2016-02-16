@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour
 {
-
     private bool gameOver;
     private bool restart;
     private bool check;
@@ -46,14 +46,16 @@ public class Game_Controller : MonoBehaviour
         m_Spirit.IsActive = false;
         m_Spirit.GetComponent<SpriteRenderer>().enabled = false;
 
-        GameObject[] platform = GameObject.FindGameObjectsWithTag("Platform");
-        for (int i = 0; i < platform.Length; i++)
-        {
-            if (platform[i].GetComponent<Platform>().IsHuman)
-                platform[i].GetComponent<SpriteRenderer>().enabled = true;
-            if (platform[i].GetComponent<Platform>().IsSpirit)
-                platform[i].GetComponent<SpriteRenderer>().enabled = false;
-        }
+        List<GameObject> SpiritObjectList = new List<GameObject>();
+        SpiritObjectList.AddRange(GameObject.FindGameObjectsWithTag("Spirit Object"));
+
+        List<GameObject> HumanObjectList = new List<GameObject>();
+        HumanObjectList.AddRange(GameObject.FindGameObjectsWithTag("Human Object"));
+
+        foreach (GameObject Object in SpiritObjectList)
+            Object.GetComponent<SpriteRenderer>().enabled = false;
+        foreach (GameObject Object in HumanObjectList)
+            Object.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     void FixedUpdate()
@@ -144,11 +146,13 @@ public class Game_Controller : MonoBehaviour
 
     public void ChangeSceneMode()
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Platform");
-        for (int i = 0; i < objects.Length; i++)
-        {
-            objects[i].GetComponent<SpriteRenderer>().enabled = !objects[i].GetComponent<SpriteRenderer>().enabled;
-        }
-        SpiritMode.SetActive(!SpiritMode.active);
+        List<GameObject> ObjectList = new List<GameObject>();
+        ObjectList.AddRange(GameObject.FindGameObjectsWithTag("Spirit Object"));
+        ObjectList.AddRange(GameObject.FindGameObjectsWithTag("Human Object"));
+
+        foreach (GameObject Object in ObjectList)
+            Object.GetComponent<SpriteRenderer>().enabled = !Object.GetComponent<SpriteRenderer>().enabled;
+
+        SpiritMode.SetActive(!SpiritMode.activeInHierarchy);
     }
 }
