@@ -28,7 +28,10 @@ public class Actor : DynamicObject
     protected float m_InitialJumpForce;
     [SerializeField, Tooltip("Amount of time to allow the control of jump height")]
     protected float m_MaxJumpTime;
-    
+
+    [SerializeField]
+    protected float m_HitPoints;
+
     [SerializeField]
     protected Animator m_Animator;
     [SerializeField]
@@ -48,5 +51,11 @@ public class Actor : DynamicObject
             m_Animator = GetComponent<Animator>();
         if (m_Rigidbody == null)
             m_Rigidbody = GetComponent<Rigidbody>();
+    }
+
+    protected virtual void OnValidate()
+    {
+        if (m_HitPoints < 0)
+            m_HitPoints = 0;
     }
 }

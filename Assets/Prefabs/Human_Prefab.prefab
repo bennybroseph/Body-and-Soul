@@ -143,11 +143,15 @@ MonoBehaviour:
   m_IncrementalJumpForce: 15
   m_InitialJumpForce: 125
   m_MaxJumpTime: 0.25
+  m_HitPoints: 0
   m_Animator: {fileID: 0}
   m_Rigidbody: {fileID: 0}
-  m_HitPoints: 0
   m_CurrentlyTouching: []
   m_DynamicObjects: []
+  m_FullHeart: {fileID: 21300354, guid: 33cc9304c696c624e97334f7ee0131c2, type: 3}
+  m_HalfHeart: {fileID: 21300356, guid: 33cc9304c696c624e97334f7ee0131c2, type: 3}
+  m_EmptyHeart: {fileID: 21300352, guid: 33cc9304c696c624e97334f7ee0131c2, type: 3}
+  m_HeartImage: []
 --- !u!212 &21271810
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -280,6 +284,21 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FullHeart
+      value: 
+      objectReference: {fileID: 21300354, guid: 33cc9304c696c624e97334f7ee0131c2,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_HalfHeart
+      value: 
+      objectReference: {fileID: 21300356, guid: 33cc9304c696c624e97334f7ee0131c2,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_EmptyHeart
+      value: 
+      objectReference: {fileID: 21300352, guid: 33cc9304c696c624e97334f7ee0131c2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122202}

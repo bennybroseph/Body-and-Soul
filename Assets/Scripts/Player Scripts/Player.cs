@@ -4,9 +4,6 @@ using System.Collections.Generic;
 public class Player : Actor
 {
     [ReadOnly, SerializeField]
-    protected float m_HitPoints;
-
-    [ReadOnly, SerializeField]
     protected List<GameObject> m_CurrentlyTouching;
     [ReadOnly, SerializeField]
     protected List<DynamicObject> m_DynamicObjects;
@@ -203,8 +200,10 @@ public class Player : Actor
             m_CurrentlyTouching.Remove(collision.gameObject);
     }
 
-    protected virtual void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
+
         if (m_Decay < 0)
             m_Decay = 0;
     }
