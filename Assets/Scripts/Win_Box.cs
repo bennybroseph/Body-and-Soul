@@ -21,6 +21,9 @@ public class Win_Box : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(TheGame.YouWin());
+        if (other.name == "Human_Prefab")
+        {
+            StartCoroutine(TheGame.YouWin());
+        }
     }
 }
