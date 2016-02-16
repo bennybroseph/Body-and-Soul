@@ -153,7 +153,7 @@ public class Player : Actor
 
         foreach (ContactPoint contact in collision.contacts)
         {
-            if (contact.normal != new Vector3(0.0f, -1.0f, 0.0f))
+            if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f))
             {
                 if (Input.GetAxisRaw("Jump") == 0)
                 {

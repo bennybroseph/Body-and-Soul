@@ -93,6 +93,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Following: {fileID: 0}
   m_Offset: {x: 0, y: 0, z: -9.35}
+  m_CloseEnough: 0
+  m_ScreenBorders:
+    MinX: -5
+    MinY: 2.75
+    MaxX: 5
+    MaxY: 5
 --- !u!124 &12419738
 Behaviour:
   m_ObjectHideFlags: 1
