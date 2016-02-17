@@ -6,7 +6,7 @@ public class Enemy : Actor {
     [SerializeField]
     protected GameObject Fire;
     [SerializeField]
-    protected GameObject Player;
+    protected Human Player;
     [SerializeField]
     protected float WaitForFire;
     protected float count;
@@ -24,7 +24,7 @@ public class Enemy : Actor {
 	protected override void Update ()
     {
         base.Update();
-        if (DoIt)
+        if (DoIt && (Player.HitPoints > 0))
         {
             TempFireball = Instantiate(Fire, gameObject.transform.position, Quaternion.identity) as GameObject;
             float ATang = Mathf.Atan((transform.position.y - Player.transform.position.y) / (transform.position.x - Player.transform.position.x));
