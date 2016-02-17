@@ -18,8 +18,7 @@ public class Human : Player
     protected override void Start()
     {
         base.Start();
-
-        m_HitPoints = 3;
+        m_HitPoints = 4;
     }
 
     // Update is called once per frame

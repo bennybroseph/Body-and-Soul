@@ -37,6 +37,7 @@ public class Actor : DynamicObject
     [SerializeField]
     protected Rigidbody m_Rigidbody;
 
+    public float HitPoints { get { return m_HitPoints; } set { m_HitPoints = value; } }
     public MovementStates MovementState { get { return m_MovementState; } set { m_MovementState = value; } }
 
     protected override void Start()
@@ -46,7 +47,7 @@ public class Actor : DynamicObject
         m_MovementState = MovementStates.IDLE;
         m_CanJump = false;
         m_JumpTimer = 0;
-
+        
         if (m_Animator == null)
             m_Animator = GetComponent<Animator>();
         if (m_Rigidbody == null)
