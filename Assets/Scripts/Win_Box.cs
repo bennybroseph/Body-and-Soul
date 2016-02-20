@@ -9,18 +9,11 @@ public class Win_Box : MonoBehaviour {
     [SerializeField]
     private Game_Controller TheGame;
 
-	void Start ()
-    {
-	
-	}
-	
-	void Update ()
-    {
-
-	}
-
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(TheGame.YouWin());
+        if (other.name == "Human_Prefab")
+        {
+            StartCoroutine(TheGame.YouWin());
+        }
     }
 }

@@ -22,6 +22,10 @@ public class Game_Controller : MonoBehaviour
     private MyCamera m_Camera;
     [SerializeField]
     private GameObject SpiritMode;
+    [SerializeField]
+    private AudioClip m_Song;
+    [SerializeField]
+    private AudioClip m_GameOverSong;
     private SceneManager SceneManagement;
 
     public enum PlayerState { HUMAN, SPIRIT };
@@ -39,6 +43,7 @@ public class Game_Controller : MonoBehaviour
         check = true;
         m_GameOverText.text = "";
         m_RestartText.text = "";
+        gameObject.GetComponent<AudioSource>().clip = m_Song;
 
         m_Human.IsActive = true;
         m_Human.GetComponent<SpriteRenderer>().enabled = true;
@@ -122,7 +127,9 @@ public class Game_Controller : MonoBehaviour
 
     public void GameOver()
     {
-        m_GameOverText.text = "Game Over!";
+        m_GameOverText.text = "Get Shreked!";
+        gameObject.GetComponent<AudioSource>().clip = m_GameOverSong;
+        gameObject.GetComponent<AudioSource>().Play();
         gameOver = true;
         m_Human.GetComponent<Rigidbody>().freezeRotation = false;
         m_Human.GetComponent<BoxCollider>().enabled = false;
