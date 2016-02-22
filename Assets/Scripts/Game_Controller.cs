@@ -146,13 +146,21 @@ public class Game_Controller : MonoBehaviour
         restart = true;
         gameOver = true;
         yield return new WaitForSeconds(3f);
-        if (SceneManager.GetActiveScene().name != "NewScene")
+        if (SceneManager.GetActiveScene().name == "AustinScene")
         {
             SceneManager.LoadScene("NewScene");
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "NewScene")
         {
             SceneManager.LoadScene("BenScene");
+        }
+        else if (SceneManager.GetActiveScene().name == "BenScene")
+        {
+            SceneManager.LoadScene("Final_Scene");
+        }
+        else if (SceneManager.GetActiveScene().name == "Final_Scene")
+        {
+            SceneManager.LoadScene("Endgame");
         }
     }
 
