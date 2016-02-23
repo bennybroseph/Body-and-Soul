@@ -38,8 +38,7 @@ public class Button : DynamicObject
 
         Physics.IgnoreCollision(m_PlayerCollider, m_Collider);
     }
-
-    // Update is called once per frame
+    
     protected override void UpdateVelocity()
     {
         base.UpdateVelocity();

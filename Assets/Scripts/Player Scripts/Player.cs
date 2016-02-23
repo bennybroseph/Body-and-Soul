@@ -8,6 +8,9 @@ public class Player : Actor
     [ReadOnly, SerializeField]
     protected List<DynamicObject> m_DynamicObjects;
 
+    [SerializeField]
+    protected Game_Controller TheGame;
+
     // Use this for initialization
     protected override void Start()
     {
@@ -19,6 +22,10 @@ public class Player : Actor
         m_CanJump = false;
 
         m_CurrentlyTouching = new List<GameObject>();
+
+        TheGame = FindObjectOfType<Game_Controller>();
+        if (TheGame == null)
+            Debug.Log("You forgot to add a Game Controller...");
     }
 
     protected override void CalculateVelocity()
@@ -138,6 +145,11 @@ public class Player : Actor
     {
         //print("LateUpdate");
 
+        if (m_DamageTimer >= 0)
+            m_DamageTimer -= Time.deltaTime;
+        else
+            m_IsHurting = false;
+
         if (m_MovementState != MovementStates.LANDING)
             m_Animator.SetInteger("Player_State", (int)m_MovementState);
         if (m_MovementState == MovementStates.WALKING)
@@ -174,7 +186,16 @@ public class Player : Actor
         foreach (ContactPoint contact in collision.contacts)
         {
             if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && collision.gameObject.GetComponent<DynamicObject>() && !m_DynamicObjects.Exists(x => x == collision.gameObject.GetComponent<DynamicObject>()))
+            {
                 m_DynamicObjects.Add(collision.gameObject.GetComponent<DynamicObject>());
+
+                if (!m_IsHurting && collision.gameObject.GetComponent<Spikes>() != null)
+                {
+                    m_IsHurting = true;
+                    m_DamageTimer = m_MaxDamageTimer;
+                    m_HitPoints -= 1;
+                }
+            }
             if (contact.normal == new Vector3(0.0f, 1.0f, 0.0f) && !m_CurrentlyTouching.Exists(x => x == collision.gameObject))
             {
                 if (Input.GetAxisRaw("Jump") == 0)

@@ -40,8 +40,11 @@ public class Human : Player
             else
                 m_HeartImage[i].sprite = m_EmptyHeart;
         }
-    }
 
+        if (m_HitPoints <= 0)
+            TheGame.GameOver();
+    }
+    
     protected override void OnValidate()
     {
         base.OnValidate();
