@@ -7,6 +7,13 @@ public class Actor : DynamicObject
     public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING, DEAD };
 
     [ReadOnly, SerializeField]
+    protected bool m_IsHurting;
+    [ReadOnly, SerializeField]
+    protected float m_DamageTimer;
+    [SerializeField]
+    protected float m_MaxDamageTimer;
+
+    [ReadOnly, SerializeField]
     protected MovementStates m_MovementState;
     [ReadOnly, SerializeField, Tooltip("Whether the actor can jump or not")]
     protected bool m_CanJump;
