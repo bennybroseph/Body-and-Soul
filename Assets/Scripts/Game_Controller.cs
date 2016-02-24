@@ -152,7 +152,7 @@ public class Game_Controller : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "NewScene")
         {
-            SceneManager.LoadScene("BenScene");
+            SceneManager.LoadScene("Final_Scene");
         }
         else if (SceneManager.GetActiveScene().name == "BenScene")
         {
