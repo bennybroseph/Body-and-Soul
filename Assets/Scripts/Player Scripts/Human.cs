@@ -18,8 +18,7 @@ public class Human : Player
     protected override void Start()
     {
         base.Start();
-
-        m_HitPoints = 3;
+        m_HitPoints = 4;
     }
 
     // Update is called once per frame
@@ -41,8 +40,11 @@ public class Human : Player
             else
                 m_HeartImage[i].sprite = m_EmptyHeart;
         }
-    }
 
+        if (m_HitPoints <= 0)
+            TheGame.GameOver();
+    }
+    
     protected override void OnValidate()
     {
         base.OnValidate();

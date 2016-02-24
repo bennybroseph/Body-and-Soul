@@ -93,16 +93,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 111838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cabaaf32dcff648ab23d2dac77b0d5, type: 3}
+  m_Script: {fileID: 11500000, guid: f8afca242933e33458e46687910f6232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsActive: 0
   m_Velocity: {x: 0, y: 0, z: 0}
   m_TotalVelocity: {x: 0, y: 0, z: 0}
-  m_IsHuman: 1
+  m_IsHuman: 0
   isSpirit: 0
-  m_Time: 5
-  m_Distance: {x: 5, y: 0, z: 0}
+  m_Time: 2
+  m_Distance: {x: 4, y: 0, z: 0}
   m_Direction: left
   m_Reverse: 0
   m_OriginalDirection: 

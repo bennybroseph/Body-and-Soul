@@ -7,6 +7,13 @@ public class Actor : DynamicObject
     public enum MovementStates { IDLE, DUCK, WALKING, RUNNING, JUMPING, LANDING, DEAD };
 
     [ReadOnly, SerializeField]
+    protected bool m_IsHurting;
+    [ReadOnly, SerializeField]
+    protected float m_DamageTimer;
+    [SerializeField]
+    protected float m_MaxDamageTimer;
+
+    [ReadOnly, SerializeField]
     protected MovementStates m_MovementState;
     [ReadOnly, SerializeField, Tooltip("Whether the actor can jump or not")]
     protected bool m_CanJump;
@@ -37,6 +44,7 @@ public class Actor : DynamicObject
     [SerializeField]
     protected Rigidbody m_Rigidbody;
 
+    public float HitPoints { get { return m_HitPoints; } set { m_HitPoints = value; } }
     public MovementStates MovementState { get { return m_MovementState; } set { m_MovementState = value; } }
 
     protected override void Start()
@@ -46,7 +54,7 @@ public class Actor : DynamicObject
         m_MovementState = MovementStates.IDLE;
         m_CanJump = false;
         m_JumpTimer = 0;
-
+        
         if (m_Animator == null)
             m_Animator = GetComponent<Animator>();
         if (m_Rigidbody == null)
